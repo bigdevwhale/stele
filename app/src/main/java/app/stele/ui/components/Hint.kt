@@ -47,6 +47,7 @@ enum class Hints(val title: Int, val text: Int, val glyph: Int) {
     TEXT(R.string.hint_text_title, R.string.hint_text, 3),
     JOURNAL(R.string.hint_journal_title, R.string.hint_journal, 10),
     LINK(R.string.hint_link_title, R.string.hint_link, 7),
+    ANKI(R.string.hint_anki_title, R.string.hint_anki, 4),
 }
 
 /**

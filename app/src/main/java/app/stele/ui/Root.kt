@@ -206,6 +206,7 @@ class Go(private val nav: NavHostController) {
     fun door() = nav.navigate("door") { launchSingleTop = true }
     fun forgery(digId: Long = 0) = nav.navigate("forgery/$digId") { launchSingleTop = true }
     fun text() = nav.navigate("text") { launchSingleTop = true }
+    fun anki() = nav.navigate("anki") { launchSingleTop = true }
     fun settings() = nav.navigate("settings") { launchSingleTop = true }
     fun back() = nav.popBackStack()
 
@@ -264,6 +265,21 @@ fun SteleRoot(settings: Settings, request: Request? = null) {
     }
 
     // Onboarded elsewhere (a restored backup, the demo seed): leave the welcome.
+    // An Anki deck has been read (wherever the digger went meanwhile): on to mapping its fields.
+    val ankiDeck = app.stele.ui.find.AnkiImport.deck
+    LaunchedEffect(ankiDeck) {
+        if (ankiDeck != null && nav.currentDestination?.route != "anki") go.anki()
+    }
+    // …and once it is saved, into its dig.
+    val ankiSaved = app.stele.ui.find.AnkiImport.saved
+    LaunchedEffect(ankiSaved) {
+        val (dig, n) = ankiSaved ?: return@LaunchedEffect
+        app.stele.ui.find.AnkiImport.saved = null
+        android.widget.Toast.makeText(context, context.resources.getQuantityString(R.plurals.csv_imported, n, n), android.widget.Toast.LENGTH_SHORT).show()
+        if (nav.currentDestination?.route == "anki") nav.popBackStack()
+        go.dig(dig)
+    }
+
     LaunchedEffect(settings.onboarded) {
         if (settings.onboarded && nav.currentDestination?.route == "welcome") nav.navigate("main") { popUpTo("welcome") { inclusive = true } }
     }
@@ -336,6 +352,7 @@ fun SteleRoot(settings: Settings, request: Request? = null) {
             }
             composable("text") { TextScreen(field, go) }
             composable("settings") { SettingsScreen(field, go) }
+            composable("anki") { app.stele.ui.find.AnkiScreen(field, go) }
         }
     }
 }

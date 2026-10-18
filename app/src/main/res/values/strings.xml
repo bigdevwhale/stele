@@ -150,7 +150,7 @@
     <string name="anki_import">Import an Anki deck</string>
     <string name="anki_import_here">Import an Anki deck here</string>
     <string name="anki_reading">Reading the deck…</string>
-    <string name="anki_hint">An .apkg file becomes a new dig: the first field is the front, the second the back; cloze notes become phrases with gaps.</string>
+    <string name="anki_hint">An .apkg file becomes a new dig: you choose which field is the front and which the back; cloze notes become phrases with gaps.</string>
     <string name="anki_failed">Couldn’t read that deck. Try exporting it from Anki as .apkg, or as plain text and import CSV.</string>
     <string name="find_stage">%1$s · step %2$d of 5</string>
     <string name="csv_saved">Saved</string>
@@ -405,6 +405,25 @@
     <string name="set_hints_hint">Each screen explains itself once, on the first visit.</string>
     <string name="set_hints_again">Show hints again</string>
 
+    <string name="anki_title">An Anki deck</string>
+    <string name="anki_front">Front: what you see</string>
+    <string name="anki_back">Back: what you recall</string>
+    <string name="anki_example">Example (optional)</string>
+    <string name="anki_none">None</string>
+    <string name="anki_field_empty">empty in every note</string>
+    <string name="anki_into">Into the dig “%1$s”</string>
+    <string name="anki_saving">Saving the finds…</string>
+    <string name="anki_empty">There are no notes in that deck.</string>
+    <string name="hint_anki_title">Which field is which</string>
+    <string name="hint_anki">Decks differ: one keeps the translation in its second field, another a sound there and the meaning further on. Each field shows what it holds in the first note; pick the front, the back and, if you like, an example. The preview below shows the finds you’ll get. A field that is only a sound shows as empty.</string>
+    <plurals name="anki_notes">
+        <item quantity="one">%d note in the deck</item>
+        <item quantity="other">%d notes in the deck</item>
+    </plurals>
+    <plurals name="anki_preview">
+        <item quantity="one">%d find</item>
+        <item quantity="other">%d finds</item>
+    </plurals>
     <plurals name="finds">
         <item quantity="one">%d find</item>
         <item quantity="other">%d finds</item>

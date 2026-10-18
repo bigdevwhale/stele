@@ -51,10 +51,12 @@ class AnkiTest {
         val db = File(context.cacheDir, "c.anki2")
         collection(db, listOf("casa\u001fhouse", "perro\u001fdog", "{{c1::Ojalá}} llueva\u001fhopefully"))
         val deck = Anki.read(context, pack("Spanish_words.apkg", mapOf("collection.anki2" to db.readBytes(), "media" to "{}".toByteArray())))
-        assertEquals(3, deck.notes.size)
-        assertEquals("house", deck.notes[0].back)
-        assertEquals("[Ojalá] llueva", deck.notes[2].front)
+        val notes = Anki.build(deck, Anki.guess(deck))
+        assertEquals(3, notes.size)
+        assertEquals("house", notes[0].back)
+        assertEquals("[Ojalá] llueva", notes[2].front)
         assertEquals("Spanish words", deck.name)
+        Anki.drop(deck)
     }
 
     @Test
@@ -68,7 +70,25 @@ class AnkiTest {
         val out = ByteArray(z.maxCompressedLength(raw.size))
         val n = z.compress(raw, 0, raw.size, out, 0, out.size)
         val deck = Anki.read(context, pack("new.apkg", mapOf("collection.anki2" to placeholder.readBytes(), "collection.anki21b" to out.copyOf(n))))
-        assertEquals(listOf("hola"), deck.notes.map { it.front })
+        assertEquals(listOf("hola"), Anki.build(deck, Anki.guess(deck)).map { it.front })
+    }
+
+    @Test
+    fun aSoundOnlyFieldIsSkippedWhenGuessing() {
+        // Like the EKI dictionary: the word, its sound, a definition, a translation, an empty field.
+        val db = File(context.cacheDir, "eki.db")
+        collection(db, listOf(
+            "kodune[sound:eki_kodune.mp3]<span>kodune</span> omadussõnadomestic • kodu-",
+            "tervislik[sound:]tervislik omadussõnahealthy",
+        ))
+        val deck = Anki.read(context, pack("eki.apkg", mapOf("collection.anki2" to db.readBytes(), "eki_kodune.mp3" to ByteArray(4000) { 7 })))
+        assertEquals(0f, deck.filled[1])
+        val m = Anki.guess(deck)
+        assertEquals(Anki.Mapping(0, 2, 3), m)
+        assertEquals("kodune omadussõna", Anki.build(deck, m)[0].back)
+        // Picked by hand: the translation as the back, no example.
+        assertEquals("healthy", Anki.build(deck, Anki.Mapping(0, 3, -1))[1].back)
+        Anki.drop(deck)
     }
 
     @Test

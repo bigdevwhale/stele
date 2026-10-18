@@ -150,7 +150,7 @@
     <string name="anki_import">Импорт колоды Anki</string>
     <string name="anki_import_here">Импорт колоды Anki сюда</string>
     <string name="anki_reading">Читаю колоду…</string>
-    <string name="anki_hint">Файл .apkg станет новым раскопом: первое поле — лицевая сторона, второе — обратная; карточки с пропусками (cloze) станут фразами.</string>
+    <string name="anki_hint">Файл .apkg станет новым раскопом: ты выберешь, какое поле лицо, а какое оборот; карточки с пропусками (cloze) станут фразами.</string>
     <string name="anki_failed">Не получилось прочитать колоду. Экспортируй её из Anki как .apkg или как текст и импортируй CSV.</string>
     <string name="find_stage">%1$s · шаг %2$d из 5</string>
     <string name="csv_saved">Сохранено</string>
@@ -405,6 +405,29 @@
     <string name="set_hints_hint">Каждый экран один раз объясняет себя, при первом заходе.</string>
     <string name="set_hints_again">Показать подсказки снова</string>
 
+    <string name="anki_title">Колода Anki</string>
+    <string name="anki_front">Лицо: что видишь</string>
+    <string name="anki_back">Оборот: что вспоминаешь</string>
+    <string name="anki_example">Пример (необязательно)</string>
+    <string name="anki_none">Нет</string>
+    <string name="anki_field_empty">пусто во всех карточках</string>
+    <string name="anki_into">В раскоп «%1$s»</string>
+    <string name="anki_saving">Сохраняю находки…</string>
+    <string name="anki_empty">В этой колоде нет карточек.</string>
+    <string name="hint_anki_title">Какое поле что значит</string>
+    <string name="hint_anki">Колоды устроены по-разному: в одной перевод во втором поле, в другой там звук, а значение дальше. У каждого поля видно, что в нём лежит в первой карточке; выбери лицо, оборот и, если хочешь, пример. Ниже видно, какие находки получатся. Поле, где только звук, показано пустым.</string>
+    <plurals name="anki_notes">
+        <item quantity="one">%d карточка в колоде</item>
+        <item quantity="few">%d карточки в колоде</item>
+        <item quantity="many">%d карточек в колоде</item>
+        <item quantity="other">%d карточки в колоде</item>
+    </plurals>
+    <plurals name="anki_preview">
+        <item quantity="one">%d находка</item>
+        <item quantity="few">%d находки</item>
+        <item quantity="many">%d находок</item>
+        <item quantity="other">%d находки</item>
+    </plurals>
     <plurals name="finds">
         <item quantity="one">%d находка</item>
         <item quantity="few">%d находки</item>

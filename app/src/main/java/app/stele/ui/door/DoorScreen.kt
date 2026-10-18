@@ -145,7 +145,7 @@ fun DoorScreen(field: Field, go: Go) {
                         Text(ask, style = UType.Find.copy(textAlign = TextAlign.Center, fontSize = if (ask.length > 40) 24.sp else 32.sp))
                         if (shown && f.kindOf != Kind.PHRASE) {
                             Spacer(Modifier.height(14.dp))
-                            Text(if (reverse) f.title() else f.back, style = UType.Italic.copy(fontSize = 22.sp, color = U.c.clay, textAlign = TextAlign.Center))
+                            app.stele.ui.clean.AnswerText(if (reverse) f.title() else f.back, U.c.clay)
                         }
                     }
                 }

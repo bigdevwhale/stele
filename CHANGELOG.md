@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0]
+
+- Anki import asks which field is the front, the back and the example, showing what each field holds and a preview. The first guess skips fields that are only a sound, so dictionary decks come in with their meanings.
+- The import runs on the app's own time: leaving the screen no longer cuts a big deck short. Sounds are skipped while unpacking.
+- Importing an Anki deck is offered on the empty Digs screen too.
+- Long answers (dictionary definitions) are set in a smaller, plain hand so they fit; pictures show whole instead of cropped.
+
 ## [1.1.2]
 
 - A big dig no longer stalls the museum for a moment on opening.

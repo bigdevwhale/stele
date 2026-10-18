@@ -16,19 +16,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Style
-import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
-import app.stele.container
-import app.stele.data.Anki
-import kotlinx.coroutines.Dispatchers
+import app.stele.ui.find.AnkiImport
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import androidx.compose.material.icons.automirrored.rounded.TextSnippet
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -65,20 +57,10 @@ import app.stele.ui.theme.UType
 @Composable
 fun DigsTab(field: Field, go: Go) {
     val c = LocalContext.current
-    val container = c.container
-    val scope = rememberCoroutineScope()
-    var importing by remember { mutableStateOf(false) }
+    val importing = AnkiImport.reading || AnkiImport.saving
     val anki = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri ?: return@rememberLauncherForActivityResult
-        importing = true
-        scope.launch {
-            val r = withContext(Dispatchers.IO) { runCatching { Anki.save(container.db.dao(), Anki.read(c, uri), 0) } }
-            importing = false
-            r.onSuccess { (dig, n) ->
-                Toast.makeText(c, c.resources.getQuantityString(R.plurals.csv_imported, n, n), Toast.LENGTH_SHORT).show()
-                go.dig(dig)
-            }.onFailure { Toast.makeText(c, R.string.anki_failed, Toast.LENGTH_LONG).show() }
-        }
+        AnkiImport.start(c, uri, 0)
     }
     LazyColumn(
         Modifier.fillMaxSize().statusBarsPadding(),
@@ -96,7 +78,17 @@ fun DigsTab(field: Field, go: Go) {
                 Empty(
                     stringResource(R.string.digs_empty), stringResource(R.string.digs_empty_text),
                     art = { ShardArt(Stage.GROUND, Modifier.size(72.dp)) },
-                    action = { PrimaryButton(stringResource(R.string.dig_new), go::newDig, icon = Icons.Rounded.Add) },
+                    action = {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            PrimaryButton(stringResource(R.string.dig_new), go::newDig, icon = Icons.Rounded.Add)
+                            Spacer(Modifier.height(10.dp))
+                            // Someone arriving from Anki starts here, with no dig yet.
+                            SoftButton(
+                                stringResource(if (importing) R.string.anki_reading else R.string.anki_import), { if (!importing) anki.launch(arrayOf("*/*")) },
+                                color = U.c.ochre, soft = U.c.ochreSoft, icon = Icons.Rounded.Style,
+                            )
+                        }
+                    },
                 )
             }
             return@LazyColumn

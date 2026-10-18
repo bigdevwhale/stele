@@ -9,6 +9,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -294,7 +295,7 @@ private fun Card(
                         Modifier.fillMaxWidth().background(U.c.limestone).border(1.dp, U.c.line, U.RLg).padding(18.dp),
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
-                        Text(expected.ifBlank { f.back }, style = UType.Find.copy(fontSize = 28.sp, lineHeight = 34.sp, textAlign = TextAlign.Center, color = U.c.ink))
+                        AnswerText(expected.ifBlank { f.back })
                         if (mode == Mode.ECHO && f.back.isNotBlank()) Text(f.back, style = UType.Italic.copy(textAlign = TextAlign.Center))
                         if (verdict != null) {
                             Spacer(Modifier.height(8.dp))
@@ -323,7 +324,7 @@ private fun Card(
                         val pic = rememberPicture(f.image)
                         if (pic != null) {
                             Spacer(Modifier.height(10.dp))
-                            Image(pic, null, Modifier.fillMaxWidth().heightIn(max = 180.dp).clip(U.RMd), contentScale = ContentScale.Crop)
+                            Image(pic, null, Modifier.fillMaxWidth(0.8f).aspectRatio((pic.width.toFloat() / pic.height).coerceAtLeast(0.75f)).clip(U.RMd), contentScale = ContentScale.Fit)
                         }
                     }
                     Dust(sweep.value, Modifier.matchParentSize(), seed = f.id.toInt())
@@ -485,5 +486,15 @@ private fun Line(text: String, color: Color) {
         Box(Modifier.size(8.dp).clip(CircleShape).background(color))
         Spacer(Modifier.width(10.dp))
         Text(text, style = UType.Body)
+    }
+}
+
+/** An answer sized to its length: a word in the carved hand, a long definition in the plain one, so it fits. */
+@Composable
+fun AnswerText(text: String, color: Color = U.c.ink) {
+    when {
+        text.length <= 40 -> Text(text, style = UType.Find.copy(fontSize = 28.sp, lineHeight = 34.sp, textAlign = TextAlign.Center, color = color))
+        text.length <= 120 -> Text(text, style = UType.Find.copy(fontSize = 21.sp, lineHeight = 27.sp, textAlign = TextAlign.Center, color = color))
+        else -> Text(text, style = UType.Body.copy(fontSize = 16.sp, lineHeight = 23.sp, color = color), modifier = Modifier.fillMaxWidth())
     }
 }

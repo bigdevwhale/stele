@@ -107,11 +107,7 @@ fun DigScreen(id: Long, field: Field, go: Go) {
     }
     val anki = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri ?: return@rememberLauncherForActivityResult
-        scope.launch {
-            val r = withContext(Dispatchers.IO) { runCatching { app.stele.data.Anki.save(container.db.dao(), app.stele.data.Anki.read(c, uri), id).second } }
-            r.onSuccess { n -> Toast.makeText(c, c.resources.getQuantityString(R.plurals.csv_imported, n, n), Toast.LENGTH_SHORT).show() }
-                .onFailure { Toast.makeText(c, R.string.anki_failed, Toast.LENGTH_LONG).show() }
-        }
+        app.stele.ui.find.AnkiImport.start(c, uri, id)
     }
     val import = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri ?: return@rememberLauncherForActivityResult
@@ -148,6 +144,9 @@ fun DigScreen(id: Long, field: Field, go: Go) {
                     DropdownMenuItem({ Text(stringResource(R.string.csv_export)) }, { menu = false; export.launch(dig.name.replace(Regex("[^\\p{L}\\p{N}]+"), "-") + ".csv") })
                 }
             }
+        }
+        if (app.stele.ui.find.AnkiImport.reading) {
+            Text(stringResource(R.string.anki_reading), style = UType.Muted.copy(color = U.c.ochre), modifier = Modifier.padding(horizontal = 20.dp))
         }
         LazyColumn(Modifier.weight(1f), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 24.dp)) {
             item { Hint(Hints.DIG, field) }

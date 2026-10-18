@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -156,7 +157,7 @@ fun FindScreen(id: Long, field: Field, go: Go) {
                     UCard {
                         val pic = rememberPicture(f.image)
                         if (pic != null) {
-                            Image(pic, null, Modifier.fillMaxWidth().heightIn(max = 260.dp).clip(U.RMd), contentScale = ContentScale.Crop)
+                            Image(pic, null, Modifier.fillMaxWidth(1f).aspectRatio((pic.width.toFloat() / pic.height).coerceAtLeast(0.75f)).clip(U.RMd), contentScale = ContentScale.Fit)
                             Spacer(Modifier.height(12.dp))
                         }
                         Note(stringResource(R.string.example), f.example)
