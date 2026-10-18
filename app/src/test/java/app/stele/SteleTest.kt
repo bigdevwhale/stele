@@ -178,6 +178,8 @@ class SteleTest {
         )
         val links = listOf(Link(a = 1, b = 2, kind = LinkKind.CONFUSED.name, createdAt = 0))
         val rounds = Rules.forgeries(finds, links, 3, 7)
+        assertTrue(Rules.forgeable(finds))
+        assertFalse(Rules.forgeable(finds.take(2)))
         val first = rounds.first { it.genuine.id == 1L || it.genuine.id == 2L }
         assertTrue(first.choices.map { it.id }.containsAll(listOf(1L, 2L)))
         rounds.forEach { r -> assertTrue(r.genuine in r.choices); assertEquals(r.choices.size, r.choices.distinctBy { it.id }.size) }

@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.2]
+
+- A big dig no longer stalls the museum for a moment on opening.
+
 ## [1.1.1]
 
 - Fixed a crash on start with a big dig (an imported Anki deck): the forgeries were shuffled inside a sort.

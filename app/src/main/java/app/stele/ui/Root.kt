@@ -165,7 +165,7 @@ class Field(
     val sounding: Rules.Sounding? = Rules.sounding(finds, now, retention, settings.soundingSize, today.toEpochDay())
     val doorDue: Boolean = Rules.doorDue(finds, now, settings.doorAt)
     val doorDaysLeft: Int? = Rules.doorDaysLeft(finds, now, settings.doorAt)
-    val forgeriesOpen: Boolean by lazy { Rules.forgeries(finds, links, 1, 0).isNotEmpty() }
+    val forgeriesOpen: Boolean = Rules.forgeable(finds)
     val fieldDays: Set<LocalDate> = Rules.fieldDays(finds, reviews, ::day)
     val cleanedToday: Int = reviews.count { day(it.at) == today && it.mode != app.stele.data.Mode.FORGERY.name }
     /** A hall opened behind the door that hasn't been shown yet. */

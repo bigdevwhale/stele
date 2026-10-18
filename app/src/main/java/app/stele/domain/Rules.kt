@@ -163,6 +163,10 @@ object Rules {
 
     class Forgery(val genuine: Find, val choices: List<Find>)
 
+    /** Whether forgeries can be laid out: some dig has three labelled pairs or terms. Cheap, unlike building a round. */
+    fun forgeable(finds: List<Find>): Boolean =
+        finds.filter { it.askable && (it.kindOf == Kind.PAIR || it.kindOf == Kind.TERM) }.groupingBy { it.digId }.eachCount().values.any { it >= 3 }
+
     /** What a text says about the museum: the finds met in it and the words it has that the museum hasn't. */
     fun sift(text: String, finds: List<Find>): Sifted {
         val sentences = Words.sentences(text)

@@ -89,8 +89,7 @@ fun DigScreen(id: Long, field: Field, go: Go) {
     val dig = field.dig(id) ?: return
     val finds = field.findsOf(id)
     val due = field.round(digId = id).size
-    // Comparing spellings across a big dig is not free: once per change, not on every keystroke in the search.
-    val forgeable = remember(finds, field.links) { Rules.forgeries(finds, field.links, 1, 0).isNotEmpty() }
+    val forgeable = Rules.forgeable(finds)
     var query by rememberSaveable { mutableStateOf("") }
     var stage by rememberSaveable { mutableStateOf<Stage?>(null) }
     var unlabelledOnly by rememberSaveable { mutableStateOf(false) }
