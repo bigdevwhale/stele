@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stele</string>
+    <string name="share_label">Add to Stele</string>
+    <string name="tile_label">New find</string>
+    <string name="shortcut_add">New find</string>
+    <string name="shortcut_clean">Clean</string>
+    <string name="about">Stele %1$s · free, no ads, no account. Everything stays on this phone.</string>
+
+    <!-- Common -->
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="save_and_next">Save, next</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="done">Done</string>
+    <string name="next">Next</string>
+    <string name="more">More</string>
+    <string name="all">All</string>
+    <string name="search">Search</string>
+    <string name="paste">Paste</string>
+    <string name="settings">Settings</string>
+    <string name="nothing_found">Nothing like that here.</string>
+    <string name="listen">Listen</string>
+    <string name="say_it">Say it</string>
+    <string name="in_time">in %1$s</string>
+
+    <!-- Tabs -->
+    <string name="tab_museum">Museum</string>
+    <string name="tab_digs">Digs</string>
+    <string name="tab_journal">Journal</string>
+    <string name="new_find">New find</string>
+
+    <!-- Stages -->
+    <string name="stage_ground">In the ground</string>
+    <string name="stage_shard">Shard</string>
+    <string name="stage_cleaned">Cleaned</string>
+    <string name="stage_restored">Restored</string>
+    <string name="stage_exhibit">On show</string>
+    <string name="stage_ground_hint">Dug up and written down, never cleaned yet. Its first cleaning brings it up.</string>
+    <string name="stage_shard_hint">Out of the ground, still dusty. It becomes clean once memory holds it a week.</string>
+    <string name="stage_cleaned_hint">Clean terracotta: memory holds it a week or more. At a month it gets its painted ornament.</string>
+    <string name="stage_restored_hint">Restored, ornament and all: it holds a month or more. At four months it goes on show.</string>
+    <string name="stage_exhibit_hint">On show in the museum: it holds four months and longer. Dust still settles, just rarely.</string>
+
+    <!-- Kinds -->
+    <string name="kind_pair">Pair</string>
+    <string name="kind_term">Term</string>
+    <string name="kind_phrase">Phrase</string>
+    <string name="kind_question">Question</string>
+
+    <!-- Modes -->
+    <string name="mode_forward">Recall the meaning</string>
+    <string name="mode_reverse">Turned around</string>
+    <string name="mode_gap">Fill the gaps</string>
+    <string name="mode_echo">By ear</string>
+    <string name="mode_door">Sealed door</string>
+    <string name="mode_forgery">Forgeries</string>
+
+    <!-- Shapes -->
+    <string name="shape_amphora">Amphora</string>
+    <string name="shape_krater">Krater</string>
+    <string name="shape_jug">Jug</string>
+    <string name="shape_bowl">Bowl</string>
+    <string name="shape_lamp">Oil lamp</string>
+    <string name="shape_mask">Mask</string>
+    <string name="shape_coin">Coin</string>
+    <string name="shape_tablet">Tablet</string>
+
+    <!-- Halls -->
+    <string name="hall_atrium">The Atrium</string>
+    <string name="hall_amphorae">Hall of Amphorae</string>
+    <string name="hall_masks">Hall of Masks</string>
+    <string name="hall_coins">Hall of Coins</string>
+    <string name="hall_tablets">Hall of Tablets</string>
+    <string name="hall_mosaics">Hall of Mosaics</string>
+    <string name="hall_bronzes">Hall of Bronzes</string>
+    <string name="hall_treasury">The Treasury</string>
+
+    <!-- Links -->
+    <string name="link_kin">Kin</string>
+    <string name="link_confused">Confused with</string>
+    <string name="link_opposite">Opposite</string>
+    <string name="link_kin_hint">Related: the same root, the same family, one leads to the other.</string>
+    <string name="link_confused_hint">The two you mix up. They come up together in Forgeries.</string>
+    <string name="link_opposite_hint">One means the other turned around.</string>
+
+    <!-- Museum -->
+    <string name="museum_title">Museum</string>
+    <string name="museum_empty">The museum is empty</string>
+    <string name="museum_empty_text">Start a dig — a language, a subject, terms from work — and add the first thing you want to remember.</string>
+    <string name="museum_empty_add">Add the first thing you want to remember: a word, a term, a phrase, a question.</string>
+    <string name="clean_title">Cleaning</string>
+    <string name="label_dusty">under dust</string>
+    <string name="label_fresh">new from the ground</string>
+    <string name="clean_start">Start cleaning</string>
+    <string name="clean_none">All clean</string>
+    <string name="clean_none_text">Nothing has gathered dust yet. Add a find or come back later.</string>
+    <string name="clean_next">The next dust settles %1$s.</string>
+    <string name="clean_new_tomorrow">Today’s new finds are up. More come out of the ground tomorrow.</string>
+    <string name="clean_add_more">Add a few finds and they’ll come up here.</string>
+    <string name="pit_title">Today’s test pit</string>
+    <string name="pit_rare">One of them is a rare find.</string>
+    <string name="pit_plain">Finds you haven’t seen in a while.</string>
+    <string name="pit_rare_badge">Rare find</string>
+    <string name="hall_opened">A new hall is open</string>
+    <string name="hall_opened_text">The sealed door gave way. The museum front has grown.</string>
+    <string name="hall_walk_in">Walk in</string>
+    <string name="door_title">The sealed door</string>
+    <string name="door_waiting">A month has passed. Twelve questions from every dig, and a new hall behind the door.</string>
+    <string name="workshop_title">Workshop</string>
+    <string name="workshop_text">Cracked: forgotten when you were sure of them. Mending these sticks best.</string>
+    <string name="forgery_title">Forgeries</string>
+    <string name="forgery_card">Tell the genuine find from look-alikes and the ones you mix up.</string>
+    <string name="collection">Collection</string>
+    <string name="vessels">Vessels</string>
+    <string name="vessels_hint">A few finds on one theme. When all of them are cleaned, the vessel stands whole, its seams in gold.</string>
+    <string name="exhibits">On show</string>
+    <string name="exhibits_none">Nothing on show yet. A find goes on show when memory holds it four months.</string>
+    <string name="dusty">dusty</string>
+    <string name="confirmed_short">seen in a text</string>
+    <string name="unlabelled">no label yet</string>
+    <string name="unlabelled_text">This find came from a text without a label. Add what it means and it will come up for cleaning.</string>
+    <string name="label_it">Add a label</string>
+
+    <!-- Digs -->
+    <string name="digs_eyebrow">Field work</string>
+    <string name="digs_title">Digs</string>
+    <string name="digs_text">Each dig is one collection: a language, a subject, the terms of your job, capitals, quotations.</string>
+    <string name="digs_empty">No digs yet</string>
+    <string name="digs_empty_text">Start with what you want to remember most.</string>
+    <string name="dig_new">New dig</string>
+    <string name="dig_edit">Edit dig</string>
+    <string name="dig_name">Name</string>
+    <string name="dig_name_hint">Spanish, Anatomy, Work terms…</string>
+    <string name="dig_glyph">Glyph</string>
+    <string name="dig_clay">Clay</string>
+    <string name="dig_lang">Language of the fronts</string>
+    <string name="dig_lang_hint">For a language, the phone can speak the words and finds can be asked by ear.</string>
+    <string name="dig_no_lang">Not a language</string>
+    <string name="dig_note">Note</string>
+    <string name="dig_note_hint">What it’s for, where it comes from</string>
+    <string name="dig_delete">Delete this dig?</string>
+    <string name="dig_delete_text">All %1$d finds in it, their vessels and history go too. This can’t be undone.</string>
+    <string name="dig_empty">Nothing dug up here yet</string>
+    <string name="dig_empty_text">Add finds one by one, or a list of them at once.</string>
+    <string name="finds">Finds</string>
+    <string name="csv_import">Import CSV</string>
+    <string name="csv_export">Export CSV</string>
+    <string name="anki_import">Import an Anki deck</string>
+    <string name="anki_import_here">Import an Anki deck here</string>
+    <string name="anki_reading">Reading the deck…</string>
+    <string name="anki_hint">An .apkg file becomes a new dig: the first field is the front, the second the back; cloze notes become phrases with gaps.</string>
+    <string name="anki_failed">Couldn’t read that deck. Try exporting it from Anki as .apkg, or as plain text and import CSV.</string>
+    <string name="find_stage">%1$s · step %2$d of 5</string>
+    <string name="csv_saved">Saved</string>
+    <string name="csv_failed">Couldn’t read or write that file</string>
+
+    <!-- Vessels -->
+    <string name="vessel">Vessel</string>
+    <string name="vessel_none">Loose</string>
+    <string name="vessel_new">New vessel</string>
+    <string name="vessel_edit">Edit vessel</string>
+    <string name="vessel_text">A vessel holds a few finds on one theme: the kitchen, the bones of the hand, the capitals of Africa. Each find is one shard.</string>
+    <string name="vessel_name">Name</string>
+    <string name="vessel_name_hint">Kitchen, Bones of the hand…</string>
+    <string name="vessel_shape">Shape</string>
+    <string name="vessel_delete">Delete this vessel?</string>
+    <string name="vessel_delete_text">Its finds stay in the dig, loose.</string>
+    <string name="vessel_whole">Whole</string>
+    <string name="vessel_of">%1$d of %2$d clean</string>
+    <string name="vessel_progress">%1$d of %2$d shards are clean. When all are, it stands whole.</string>
+    <string name="vessel_mended_text">Whole: every shard is clean, and the seams are laid in gold.</string>
+    <string name="vessel_mended_on">Mended %1$s</string>
+    <string name="vessel_put">Put finds in</string>
+    <string name="vessel_shards">Shards</string>
+    <string name="vessel_take_out">Take out of the vessel</string>
+    <string name="vessel_no_loose">Every find of this dig is already in a vessel.</string>
+
+    <!-- Add a find -->
+    <string name="find_edit">Edit find</string>
+    <string name="find_saved">Saved. Next one.</string>
+    <string name="front_pair">Word or thing</string>
+    <string name="front_term">Term</string>
+    <string name="front_phrase">Phrase</string>
+    <string name="front_question">Question</string>
+    <string name="front_hint">casa</string>
+    <string name="front_phrase_hint">Memory is the [treasury] of all things</string>
+    <string name="phrase_gaps_hint">Put [brackets] round what you want to recall. Without them, the longer words become gaps.</string>
+    <string name="phrase_wrap_last">[ ] round the last word</string>
+    <string name="back_pair">Its pair</string>
+    <string name="back_term">What it means</string>
+    <string name="back_phrase">Source or meaning (optional)</string>
+    <string name="back_question">Answer</string>
+    <string name="back_pair_hint">house</string>
+    <string name="back_hint">In your own words</string>
+    <string name="back_variants">Several right answers: separate them with commas.</string>
+    <string name="find_more">Example, association, picture</string>
+    <string name="example">Your own sentence</string>
+    <string name="example_hint">A sentence of your own with it is remembered better than any from a book.</string>
+    <string name="example_placeholder">Mi casa es pequeña pero luminosa.</string>
+    <string name="hint">Association</string>
+    <string name="hint_hint">An image or a pun that brings it back. Shown only if you ask for a hint.</string>
+    <string name="hint_placeholder">like a casino where everyone feels at home</string>
+    <string name="origin">Where you met it</string>
+    <string name="origin_placeholder">a show, a colleague, a sign</string>
+    <string name="picture">Picture</string>
+    <string name="picture_camera">Camera</string>
+    <string name="picture_gallery">Gallery</string>
+    <string name="picture_remove">Remove picture</string>
+
+    <!-- Bulk -->
+    <string name="bulk_title">As a list</string>
+    <string name="bulk_text">One find per line, its two sides split by a dash, “=”, “;” or a tab. A line with one side comes in without a label.</string>
+    <string name="bulk_placeholder">casa — house\nperro — dog\ngato = cat</string>
+
+    <!-- A find -->
+    <string name="cracked">cracked</string>
+    <string name="find_way">Its way to the showcase</string>
+    <string name="find_recall">Recall now: %1$d%%</string>
+    <string name="find_next">Dust settles %1$s</string>
+    <string name="find_dusty_now">Dusty now: time to clean it.</string>
+    <string name="find_holds">Memory holds it about %1$s; “%2$s” needs %3$s.</string>
+    <string name="clean_now">Clean it now</string>
+    <string name="find_notes">Notes</string>
+    <string name="quote">Seen in a text</string>
+    <string name="confirmed_on">Confirmed %1$s</string>
+    <string name="links">Links</string>
+    <string name="links_none">Tie it to kin, to opposites, to what you mix it up with.</string>
+    <string name="link_add">Link a find</string>
+    <string name="link_remove">Remove link</string>
+    <string name="history">Cleanings</string>
+    <string name="find_delete">Delete this find?</string>
+    <string name="find_delete_text">Its history goes with it.</string>
+
+    <!-- Cleaning -->
+    <string name="ask_back">What is its pair?</string>
+    <string name="ask_front">Turn it around: what is the original?</string>
+    <string name="ask_meaning">What does it mean?</string>
+    <string name="ask_term">Which term is this?</string>
+    <string name="ask_answer">Your answer?</string>
+    <string name="echo_prompt">Listen and write down what you hear.</string>
+    <string name="show_hint">Hint</string>
+    <string name="write_it">Write it down</string>
+    <string name="type_answer">Your answer</string>
+    <string name="type_gaps">The missing words, in order</string>
+    <string name="stake_title">How sure are you?</string>
+    <string name="stake_text">Stake chisel strikes before you look. Sure and wrong cracks the find, and it goes to the workshop.</string>
+    <string name="stake_0">Don’t know</string>
+    <string name="stake_1">Maybe</string>
+    <string name="stake_2">Fairly sure</string>
+    <string name="stake_3">Certain</string>
+    <string name="grade_title">How did it go?</string>
+    <string name="grade_crack_warning">Three strikes and forgotten: it will crack.</string>
+    <string name="grade_again">Forgot</string>
+    <string name="grade_hard">Hard</string>
+    <string name="grade_good">Knew it</string>
+    <string name="grade_easy">Easy</string>
+    <string name="grade_again_sub">once more</string>
+    <string name="verdict_right">Right: “%1$s”</string>
+    <string name="verdict_almost">Almost: “%1$s”</string>
+    <string name="verdict_wrong">You wrote “%1$s”</string>
+    <string name="banner_up">“%1$s” is now %2$s</string>
+    <string name="banner_dug">“%1$s” is out of the ground</string>
+    <string name="banner_cracked">“%1$s” cracked: to the workshop</string>
+    <string name="banner_mended">The vessel “%1$s” stands whole!</string>
+    <string name="summary_title">Brushed clean</string>
+    <string name="summary_mended">A vessel is whole</string>
+    <string name="summary_mended_text">Every shard is clean, so its seams are laid in gold.</string>
+    <string name="summary_right">Remembered %1$d of %2$d.</string>
+    <string name="show_answer">Show the answer</string>
+
+    <!-- Sealed door -->
+    <string name="door_intro_title">Twelve questions, no hints</string>
+    <string name="door_intro">%1$d finds from every dig, mostly the ones you haven’t seen for longest. No stakes, no hints. Three in four right, and the door opens.</string>
+    <string name="door_behind">Behind it: %1$s.</string>
+    <string name="door_knock">Knock</string>
+    <string name="door_knew">Knew it</string>
+    <string name="door_forgot">Forgot</string>
+    <string name="door_opened">The door opens: %1$s.</string>
+    <string name="door_held">The door holds for now. Clean what you forgot, and knock again in a week.</string>
+
+    <!-- Forgeries -->
+    <string name="forgery_ask">Which one is genuine?</string>
+    <string name="forgery_placard">The placard says</string>
+    <string name="forgery_right">Genuine.</string>
+    <string name="forgery_wrong">A forgery: “%1$s” is “%2$s”. They’re marked as confused.</string>
+    <string name="forgery_done_title">The forgeries are sorted</string>
+    <string name="forgery_done">%1$d of %2$d told apart.</string>
+    <string name="forgery_mixed">Mixed up</string>
+    <string name="forgery_mixed_text">They’ll meet again in the next round of forgeries.</string>
+
+    <!-- Text -->
+    <string name="text_title">Sift a text</string>
+    <string name="text_intro">Paste an article, a chapter, a song or your notes. See which finds turn up in it, and which of its words aren’t in the museum yet.</string>
+    <string name="text_placeholder">Paste or type a text</string>
+    <string name="text_sift">Sift</string>
+    <string name="text_known_title">Known</string>
+    <string name="text_known">of the text’s words are in your museum.</string>
+    <string name="text_confirmed">Confirmed: their sentences are kept with them.</string>
+    <string name="text_confirm_hint">A real sentence is kept with each, and they get the seal “seen in a text”.</string>
+    <string name="text_fresh">Not in the museum</string>
+    <string name="text_fresh_hint">The text’s other words, most frequent first. Pick some to take into a dig; you’ll add their labels later.</string>
+
+    <!-- Journal -->
+    <string name="journal_eyebrow">Field notes</string>
+    <string name="journal_title">Journal</string>
+    <string name="journal_days">days in the field</string>
+    <string name="journal_finds">finds</string>
+    <string name="journal_cleanings">cleanings</string>
+    <string name="journal_vessels">vessels whole</string>
+    <string name="journal_field">Days in the field</string>
+    <string name="journal_forecast">The week’s dust</string>
+    <string name="journal_forecast_text">How many finds dust over each day. Today includes the ones waiting.</string>
+    <string name="journal_eye">The restorer’s eye</string>
+    <string name="journal_eye_text">How often each stake turned out right. A good eye: three strikes are almost always right, one strike often isn’t.</string>
+    <string name="journal_eye_sharp">A sharp eye: when you’re certain, you’re right.</string>
+    <string name="journal_eye_fair">A fair eye. Now and then certainty lets you down; those finds are in the workshop.</string>
+    <string name="journal_eye_over">You’re often certain and wrong. Stake fewer strikes: the cracks teach the most.</string>
+    <string name="journal_halls">Halls</string>
+    <string name="journal_door_last">Last knock on the door: %1$d of %2$d, %3$s.</string>
+    <string name="journal_right">%1$d%% of all cleanings remembered.</string>
+
+    <!-- Settings -->
+    <string name="set_bell">The evening bell</string>
+    <string name="set_bell_hint">Once a day, only when there’s a test pit to dig or dust to clean.</string>
+    <string name="set_bell_on">Ring the bell</string>
+    <string name="set_at">At</string>
+    <string name="set_pit_size">Finds in the test pit</string>
+    <string name="set_pace">Pace</string>
+    <string name="set_new">New finds a day</string>
+    <string name="set_new_hint">How many finds come out of the ground for their first cleaning each day.</string>
+    <string name="set_retention">Retention</string>
+    <string name="set_retention_hint">A find wants cleaning when the chance of recalling it drops below this. Stricter means more often.</string>
+    <string name="retention_light">85%</string>
+    <string name="retention_usual">90%</string>
+    <string name="retention_strict">95%</string>
+    <string name="set_language">Language</string>
+    <string name="lang_system">System</string>
+    <string name="lang_none">Not a language</string>
+    <string name="set_gender">How should the app speak to you?</string>
+    <string name="gender_male">He</string>
+    <string name="gender_female">She</string>
+    <string name="set_backup">Backup</string>
+    <string name="set_backup_hint">The whole museum, pictures included, in one file you keep.</string>
+    <string name="backup_export">Save a backup</string>
+    <string name="backup_export_hint">To a file of your choice</string>
+    <string name="backup_import">Restore a backup</string>
+    <string name="backup_import_hint">Replaces everything here</string>
+    <string name="backup_import_confirm">Everything in the museum now will be replaced by the backup.</string>
+    <string name="backup_import_do">Replace</string>
+    <string name="backup_done">Backup saved.</string>
+    <string name="backup_failed">Couldn’t save the backup.</string>
+    <string name="backup_restored">Restored.</string>
+    <string name="backup_bad">That isn’t a Stele backup.</string>
+
+    <!-- Bell -->
+    <string name="channel_bell">Evening bell</string>
+    <string name="channel_bell_desc">The day’s test pit and finds gathering dust</string>
+    <string name="bell_title_pit">Today’s test pit is ready</string>
+    <string name="bell_title_dust">Dust has settled</string>
+    <string name="bell_pit">A few finds you haven’t seen in a while, and maybe a rare one.</string>
+
+    <!-- Welcome -->
+    <string name="welcome_1_title">Everything worth keeping is a find</string>
+    <string name="welcome_1_text">A word, a term, a phrase, a date, a name. Write it down, and it’s out of the ground. Nothing is built in: the museum is yours to fill.</string>
+    <string name="welcome_2_title">Clean it until it shines</string>
+    <string name="welcome_2_text">Dust settles along your forgetting curve. Each cleaning, recall it first and stake chisel strikes on being right. From shard to clean clay, to painted, to on show.</string>
+    <string name="welcome_3_title">Glue vessels, open halls</string>
+    <string name="welcome_3_text">Finds on one theme are shards of one vessel; clean them all and it stands whole, mended in gold. Once a month the sealed door opens a new hall.</string>
+    <string name="welcome_start">Start the first dig</string>
+    <string name="welcome_word">casa</string>
+    <string name="welcome_word_back">house</string>
+
+    <plurals name="finds">
+        <item quantity="one">%d find</item>
+        <item quantity="other">%d finds</item>
+    </plurals>
+    <plurals name="vessels">
+        <item quantity="one">%d vessel</item>
+        <item quantity="other">%d vessels</item>
+    </plurals>
+    <plurals name="museum_holds">
+        <item quantity="one">%d on show</item>
+        <item quantity="other">%d on show</item>
+    </plurals>
+    <plurals name="vessels_whole">
+        <item quantity="one">%d vessel whole</item>
+        <item quantity="other">%d vessels whole</item>
+    </plurals>
+    <plurals name="halls_open">
+        <item quantity="one">%d hall</item>
+        <item quantity="other">%d halls</item>
+    </plurals>
+    <plurals name="pit_text">
+        <item quantity="one">%d find to dig up again</item>
+        <item quantity="other">%d finds to dig up again</item>
+    </plurals>
+    <plurals name="door_in">
+        <item quantity="one">The sealed door opens in %d day.</item>
+        <item quantity="other">The sealed door opens in %d days.</item>
+    </plurals>
+    <plurals name="door_left">
+        <item quantity="one">%d question left</item>
+        <item quantity="other">%d questions left</item>
+    </plurals>
+    <plurals name="unlabelled_count">
+        <item quantity="one">%d find has no label yet</item>
+        <item quantity="other">%d finds have no label yet</item>
+    </plurals>
+    <plurals name="exhibits_more">
+        <item quantity="one">and %d more</item>
+        <item quantity="other">and %d more</item>
+    </plurals>
+    <plurals name="cleaned_today">
+        <item quantity="one">%d cleaning today</item>
+        <item quantity="other">%d cleanings today</item>
+    </plurals>
+    <plurals name="clean_dig">
+        <item quantity="one">Clean %d find</item>
+        <item quantity="other">Clean %d finds</item>
+    </plurals>
+    <plurals name="csv_imported">
+        <item quantity="one">%d find added</item>
+        <item quantity="other">%d finds added</item>
+    </plurals>
+    <plurals name="vessel_needs">
+        <item quantity="one">Put in %d more find and it can be glued.</item>
+        <item quantity="other">Put in %d more finds and it can be glued.</item>
+    </plurals>
+    <plurals name="vessel_put_n">
+        <item quantity="one">Put in %d find</item>
+        <item quantity="other">Put in %d finds</item>
+    </plurals>
+    <plurals name="added_now">
+        <item quantity="one">%d added just now</item>
+        <item quantity="other">%d added just now</item>
+    </plurals>
+    <plurals name="bulk_preview">
+        <item quantity="one">%d find</item>
+        <item quantity="other">%d finds</item>
+    </plurals>
+    <plurals name="bulk_save">
+        <item quantity="one">Add %d find</item>
+        <item quantity="other">Add %d finds</item>
+    </plurals>
+    <plurals name="summary_cleaned">
+        <item quantity="one">%d find cleaned</item>
+        <item quantity="other">%d finds cleaned</item>
+    </plurals>
+    <plurals name="summary_dug">
+        <item quantity="one">%d find out of the ground</item>
+        <item quantity="other">%d finds out of the ground</item>
+    </plurals>
+    <plurals name="text_found">
+        <item quantity="one">%d find in the text</item>
+        <item quantity="other">%d finds in the text</item>
+    </plurals>
+    <plurals name="text_confirm">
+        <item quantity="one">Confirm %d find</item>
+        <item quantity="other">Confirm %d finds</item>
+    </plurals>
+    <plurals name="text_take">
+        <item quantity="one">Take %d word into the dig</item>
+        <item quantity="other">Take %d words into the dig</item>
+    </plurals>
+    <plurals name="text_taken">
+        <item quantity="one">%d word taken. Add its label in the dig.</item>
+        <item quantity="other">%d words taken. Add their labels in the dig.</item>
+    </plurals>
+    <plurals name="bell_dust">
+        <item quantity="one">%d find is under dust. A few minutes with the brush.</item>
+        <item quantity="other">%d finds are under dust. A few minutes with the brush.</item>
+    </plurals>
+    <plurals name="bell_pit_dust">
+        <item quantity="one">A few forgotten finds, maybe a rare one, and %d under dust.</item>
+        <item quantity="other">A few forgotten finds, maybe a rare one, and %d under dust.</item>
+    </plurals>
+    <plurals name="span_minutes">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="span_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="span_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <plurals name="span_months">
+        <item quantity="one">%d month</item>
+        <item quantity="other">%d months</item>
+    </plurals>
+    <plurals name="span_years">
+        <item quantity="one">%d year</item>
+        <item quantity="other">%d years</item>
+    </plurals>
+</resources>

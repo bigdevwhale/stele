@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Стела</string>
+    <string name="share_label">В Стелу</string>
+    <string name="tile_label">Новая находка</string>
+    <string name="shortcut_add">Новая находка</string>
+    <string name="shortcut_clean">Расчистка</string>
+    <string name="about">Стела %1$s · бесплатно, без рекламы и аккаунта. Всё хранится только на этом телефоне.</string>
+
+    <!-- Common -->
+    <string name="back">Назад</string>
+    <string name="save">Сохранить</string>
+    <string name="save_and_next">И ещё одну</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="done">Готово</string>
+    <string name="next">Дальше</string>
+    <string name="more">Ещё</string>
+    <string name="all">Все</string>
+    <string name="search">Поиск</string>
+    <string name="paste">Вставить</string>
+    <string name="settings">Настройки</string>
+    <string name="nothing_found">Ничего такого здесь нет.</string>
+    <string name="listen">Послушать</string>
+    <string name="say_it">Сказать вслух</string>
+    <string name="in_time">через %1$s</string>
+
+    <!-- Tabs -->
+    <string name="tab_museum">Музей</string>
+    <string name="tab_digs">Раскопы</string>
+    <string name="tab_journal">Журнал</string>
+    <string name="new_find">Новая находка</string>
+
+    <!-- Stages -->
+    <string name="stage_ground">В земле</string>
+    <string name="stage_shard">Черепок</string>
+    <string name="stage_cleaned">Расчищено</string>
+    <string name="stage_restored">Реставрировано</string>
+    <string name="stage_exhibit">Экспонат</string>
+    <string name="stage_ground_hint">Находка записана, но ещё ни разу не расчищалась. Первая расчистка поднимет её из земли.</string>
+    <string name="stage_shard_hint">Уже не в земле, но ещё в пыли. Станет расчищенной, когда память удержит её неделю.</string>
+    <string name="stage_cleaned_hint">Чистая терракота: память держит неделю и дольше. Через месяц появится роспись.</string>
+    <string name="stage_restored_hint">Отреставрировано вместе с орнаментом: держится месяц и дольше. С четырёх месяцев это экспонат.</string>
+    <string name="stage_exhibit_hint">Экспонат музея: держится четыре месяца и дольше. Пыль ложится и на него, только редко.</string>
+
+    <!-- Kinds -->
+    <string name="kind_pair">Пара</string>
+    <string name="kind_term">Термин</string>
+    <string name="kind_phrase">Фраза</string>
+    <string name="kind_question">Вопрос</string>
+
+    <!-- Modes -->
+    <string name="mode_forward">Вспомни значение</string>
+    <string name="mode_reverse">Наоборот</string>
+    <string name="mode_gap">Заполни пропуски</string>
+    <string name="mode_echo">На слух</string>
+    <string name="mode_door">Запечатанная дверь</string>
+    <string name="mode_forgery">Подделки</string>
+
+    <!-- Shapes -->
+    <string name="shape_amphora">Амфора</string>
+    <string name="shape_krater">Кратер</string>
+    <string name="shape_jug">Кувшин</string>
+    <string name="shape_bowl">Чаша</string>
+    <string name="shape_lamp">Светильник</string>
+    <string name="shape_mask">Маска</string>
+    <string name="shape_coin">Монета</string>
+    <string name="shape_tablet">Табличка</string>
+
+    <!-- Halls -->
+    <string name="hall_atrium">Атриум</string>
+    <string name="hall_amphorae">Зал амфор</string>
+    <string name="hall_masks">Зал масок</string>
+    <string name="hall_coins">Зал монет</string>
+    <string name="hall_tablets">Зал табличек</string>
+    <string name="hall_mosaics">Зал мозаик</string>
+    <string name="hall_bronzes">Зал бронзы</string>
+    <string name="hall_treasury">Сокровищница</string>
+
+    <!-- Links -->
+    <string name="link_kin">Родня</string>
+    <string name="link_confused">Путаю с</string>
+    <string name="link_opposite">Противоположное</string>
+    <string name="link_kin_hint">Связаны общим корнем, одной семьёй, одно ведёт к другому.</string>
+    <string name="link_confused_hint">Те, что путаются. В «Подделках» они будут встречаться вместе.</string>
+    <string name="link_opposite_hint">Одно означает другое наоборот.</string>
+
+    <!-- Museum -->
+    <string name="museum_title">Музей</string>
+    <string name="museum_empty">Музей пока пуст</string>
+    <string name="museum_empty_text">Начни раскоп: язык, предмет, термины с работы. Добавь первое, что хочешь запомнить.</string>
+    <string name="museum_empty_add">Добавь первое, что хочешь запомнить: слово, термин, фразу или вопрос.</string>
+    <string name="clean_title">Расчистка</string>
+    <string name="label_dusty">под пылью</string>
+    <string name="label_fresh">новых из земли</string>
+    <string name="clean_start">Начать расчистку</string>
+    <string name="clean_none">Всё расчищено</string>
+    <string name="clean_none_text">Пыль пока нигде не легла. Добавь находку или загляни позже.</string>
+    <string name="clean_next">Новая пыль ляжет %1$s.</string>
+    <string name="clean_new_tomorrow">Новые находки на сегодня уже подняты. Завтра из земли выйдут ещё.</string>
+    <string name="clean_add_more">Добавь несколько находок, и они появятся здесь.</string>
+    <string name="pit_title">Шурф дня</string>
+    <string name="pit_rare">Среди них есть редкая находка.</string>
+    <string name="pit_plain">Находки, которых ты давно не видел{|а}.</string>
+    <string name="pit_rare_badge">Редкая находка</string>
+    <string name="hall_opened">Открыт новый зал</string>
+    <string name="hall_opened_text">Запечатанная дверь поддалась. Фасад музея стал больше.</string>
+    <string name="hall_walk_in">Войти</string>
+    <string name="door_title">Запечатанная дверь</string>
+    <string name="door_waiting">Прошёл месяц. Двенадцать вопросов из всех раскопов, а за дверью новый зал.</string>
+    <string name="workshop_title">Мастерская</string>
+    <string name="workshop_text">Треснувшие: забытые, хотя ты был{|а} в них {уверен|уверена}. Именно такие ошибки, исправленные, держатся крепче всего.</string>
+    <string name="forgery_title">Подделки</string>
+    <string name="forgery_card">Отличи подлинную находку от похожих и от тех, что путаешь.</string>
+    <string name="collection">Коллекция</string>
+    <string name="vessels">Сосуды</string>
+    <string name="vessels_hint">Несколько находок на одну тему. Когда все расчищены, сосуд склеивается, и швы становятся золотыми.</string>
+    <string name="exhibits">Экспонаты</string>
+    <string name="exhibits_none">Экспонатов пока нет. Находка становится экспонатом, когда память держит её четыре месяца.</string>
+    <string name="dusty">в пыли</string>
+    <string name="confirmed_short">встречено в тексте</string>
+    <string name="unlabelled">без подписи</string>
+    <string name="unlabelled_text">Эта находка пришла из текста без подписи. Допиши, что она значит, и она начнёт попадать в расчистку.</string>
+    <string name="label_it">Подписать</string>
+
+    <!-- Digs -->
+    <string name="digs_eyebrow">Полевые работы</string>
+    <string name="digs_title">Раскопы</string>
+    <string name="digs_text">Раскоп — это одна коллекция: язык, предмет, термины по работе, столицы, цитаты.</string>
+    <string name="digs_empty">Раскопов пока нет</string>
+    <string name="digs_empty_text">Начни с того, что важнее всего запомнить.</string>
+    <string name="dig_new">Новый раскоп</string>
+    <string name="dig_edit">Раскоп</string>
+    <string name="dig_name">Название</string>
+    <string name="dig_name_hint">Испанский, Анатомия, Термины по работе…</string>
+    <string name="dig_glyph">Знак</string>
+    <string name="dig_clay">Глина</string>
+    <string name="dig_lang">Язык лицевой стороны</string>
+    <string name="dig_lang_hint">Если это язык, телефон сможет произносить слова, а находки иногда будут спрашиваться на слух.</string>
+    <string name="dig_no_lang">Не язык</string>
+    <string name="dig_note">Заметка</string>
+    <string name="dig_note_hint">Зачем этот раскоп и откуда находки</string>
+    <string name="dig_delete">Удалить раскоп?</string>
+    <string name="dig_delete_text">Вместе с ним удалятся все находки (%1$d), сосуды и история. Это нельзя отменить.</string>
+    <string name="dig_empty">Здесь пока ничего не найдено</string>
+    <string name="dig_empty_text">Добавляй находки по одной или сразу списком.</string>
+    <string name="finds">Находки</string>
+    <string name="csv_import">Импорт CSV</string>
+    <string name="csv_export">Экспорт CSV</string>
+    <string name="anki_import">Импорт колоды Anki</string>
+    <string name="anki_import_here">Импорт колоды Anki сюда</string>
+    <string name="anki_reading">Читаю колоду…</string>
+    <string name="anki_hint">Файл .apkg станет новым раскопом: первое поле — лицевая сторона, второе — обратная; карточки с пропусками (cloze) станут фразами.</string>
+    <string name="anki_failed">Не получилось прочитать колоду. Экспортируй её из Anki как .apkg или как текст и импортируй CSV.</string>
+    <string name="find_stage">%1$s · шаг %2$d из 5</string>
+    <string name="csv_saved">Сохранено</string>
+    <string name="csv_failed">Не получилось прочитать или записать файл</string>
+
+    <!-- Vessels -->
+    <string name="vessel">Сосуд</string>
+    <string name="vessel_none">Без сосуда</string>
+    <string name="vessel_new">Новый сосуд</string>
+    <string name="vessel_edit">Сосуд</string>
+    <string name="vessel_text">Сосуд собирает несколько находок на одну тему: кухня, кости кисти, столицы Африки. Каждая находка — один черепок.</string>
+    <string name="vessel_name">Название</string>
+    <string name="vessel_name_hint">Кухня, Кости кисти…</string>
+    <string name="vessel_shape">Форма</string>
+    <string name="vessel_delete">Удалить сосуд?</string>
+    <string name="vessel_delete_text">Находки останутся в раскопе, просто без сосуда.</string>
+    <string name="vessel_whole">Склеен</string>
+    <string name="vessel_of">расчищено %1$d из %2$d</string>
+    <string name="vessel_progress">Расчищено черепков: %1$d из %2$d. Когда все будут чистыми, сосуд склеится.</string>
+    <string name="vessel_mended_text">Склеен: все черепки расчищены, швы покрыты золотом.</string>
+    <string name="vessel_mended_on">Склеен %1$s</string>
+    <string name="vessel_put">Положить</string>
+    <string name="vessel_shards">Черепки</string>
+    <string name="vessel_take_out">Вынуть из сосуда</string>
+    <string name="vessel_no_loose">Все находки этого раскопа уже разложены по сосудам.</string>
+
+    <!-- Add a find -->
+    <string name="find_edit">Находка</string>
+    <string name="find_saved">Сохранено. Следующая.</string>
+    <string name="front_pair">Слово или вещь</string>
+    <string name="front_term">Термин</string>
+    <string name="front_phrase">Фраза</string>
+    <string name="front_question">Вопрос</string>
+    <string name="front_hint">casa</string>
+    <string name="front_phrase_hint">Память — [сокровищница] всего</string>
+    <string name="phrase_gaps_hint">Возьми в [скобки] то, что нужно вспоминать. Без скобок пропусками станут самые длинные слова.</string>
+    <string name="phrase_wrap_last">[ ] вокруг последнего слова</string>
+    <string name="back_pair">Пара</string>
+    <string name="back_term">Что значит</string>
+    <string name="back_phrase">Источник или смысл (необязательно)</string>
+    <string name="back_question">Ответ</string>
+    <string name="back_pair_hint">дом</string>
+    <string name="back_hint">Своими словами</string>
+    <string name="back_variants">Если верных ответов несколько, перечисли через запятую.</string>
+    <string name="find_more">Пример, ассоциация, картинка</string>
+    <string name="example">Своя фраза</string>
+    <string name="example_hint">Своё предложение с этим словом запоминается лучше любого из учебника.</string>
+    <string name="example_placeholder">Mi casa es pequeña pero luminosa.</string>
+    <string name="hint">Ассоциация</string>
+    <string name="hint_hint">Образ или созвучие, которое помогает вспомнить. Показывается, только если попросишь подсказку.</string>
+    <string name="hint_placeholder">как казино, где каждый чувствует себя как дома</string>
+    <string name="origin">Где встретил{|а}</string>
+    <string name="origin_placeholder">сериал, коллега, вывеска</string>
+    <string name="picture">Картинка</string>
+    <string name="picture_camera">Камера</string>
+    <string name="picture_gallery">Галерея</string>
+    <string name="picture_remove">Убрать картинку</string>
+
+    <!-- Bulk -->
+    <string name="bulk_title">Списком</string>
+    <string name="bulk_text">Одна находка на строку, стороны через тире, «=», «;» или табуляцию. Строка с одной стороной добавится без подписи.</string>
+    <string name="bulk_placeholder">casa — дом\nperro — собака\ngato = кошка</string>
+
+    <!-- A find -->
+    <string name="cracked">трещина</string>
+    <string name="find_way">Путь к витрине</string>
+    <string name="find_recall">Вспомнится сейчас: %1$d%%</string>
+    <string name="find_next">Пыль ляжет %1$s</string>
+    <string name="find_dusty_now">Уже в пыли: пора расчистить.</string>
+    <string name="find_holds">Память держит её около %1$s; для стадии «%2$s» нужно %3$s.</string>
+    <string name="clean_now">Расчистить сейчас</string>
+    <string name="find_notes">Заметки</string>
+    <string name="quote">Встречено в тексте</string>
+    <string name="confirmed_on">Подтверждено %1$s</string>
+    <string name="links">Связи</string>
+    <string name="links_none">Свяжи её с роднёй, с противоположным, с тем, с чем путаешь.</string>
+    <string name="link_add">Связать с находкой</string>
+    <string name="link_remove">Убрать связь</string>
+    <string name="history">Расчистки</string>
+    <string name="find_delete">Удалить находку?</string>
+    <string name="find_delete_text">Её история удалится вместе с ней.</string>
+
+    <!-- Cleaning -->
+    <string name="ask_back">Какая у неё пара?</string>
+    <string name="ask_front">Наоборот: как это в оригинале?</string>
+    <string name="ask_meaning">Что это значит?</string>
+    <string name="ask_term">Какой это термин?</string>
+    <string name="ask_answer">Твой ответ?</string>
+    <string name="echo_prompt">Послушай и запиши, что услышал{|а}.</string>
+    <string name="show_hint">Подсказка</string>
+    <string name="write_it">Написать ответ</string>
+    <string name="type_answer">Твой ответ</string>
+    <string name="type_gaps">Пропущенные слова по порядку</string>
+    <string name="stake_title">Насколько ты {уверен|уверена}?</string>
+    <string name="stake_text">Поставь удары резца, пока не посмотрел{|а}. Если {уверен|уверена} и {ошибся|ошиблась}, находка треснет и отправится в мастерскую.</string>
+    <string name="stake_0">Не знаю</string>
+    <string name="stake_1">Может быть</string>
+    <string name="stake_2">Скорее да</string>
+    <string name="stake_3">Точно</string>
+    <string name="grade_title">Как получилось?</string>
+    <string name="grade_crack_warning">Три удара, но не вспомнил{|а}: находка треснет.</string>
+    <string name="grade_again">Забыл{|а}</string>
+    <string name="grade_hard">С трудом</string>
+    <string name="grade_good">Помню</string>
+    <string name="grade_easy">Легко</string>
+    <string name="grade_again_sub">ещё раз</string>
+    <string name="verdict_right">Верно: «%1$s»</string>
+    <string name="verdict_almost">Почти: «%1$s»</string>
+    <string name="verdict_wrong">Ты написал{|а} «%1$s»</string>
+    <string name="banner_up">«%1$s»: теперь %2$s</string>
+    <string name="banner_dug">«%1$s» поднята из земли</string>
+    <string name="banner_cracked">«%1$s» треснула: в мастерскую</string>
+    <string name="banner_mended">Сосуд «%1$s» склеен!</string>
+    <string name="summary_title">Расчищено</string>
+    <string name="summary_mended">Сосуд склеен</string>
+    <string name="summary_mended_text">Все черепки чистые, поэтому его швы покрыты золотом.</string>
+    <string name="summary_right">Вспомнил{|а} %1$d из %2$d.</string>
+    <string name="show_answer">Показать ответ</string>
+
+    <!-- Sealed door -->
+    <string name="door_intro_title">Двенадцать вопросов, без подсказок</string>
+    <string name="door_intro">%1$d находок из всех раскопов, в основном тех, что ты давно не видел{|а}. Без ставок и подсказок. Три верных из четырёх, и дверь откроется.</string>
+    <string name="door_behind">За ней: %1$s.</string>
+    <string name="door_knock">Постучать</string>
+    <string name="door_knew">Помню</string>
+    <string name="door_forgot">Забыл{|а}</string>
+    <string name="door_opened">Дверь открыта: %1$s.</string>
+    <string name="door_held">Дверь пока не поддалась. Расчисти то, что забыл{|а}, и постучи снова через неделю.</string>
+
+    <!-- Forgeries -->
+    <string name="forgery_ask">Какая из них подлинная?</string>
+    <string name="forgery_placard">На табличке написано</string>
+    <string name="forgery_right">Подлинник.</string>
+    <string name="forgery_wrong">Подделка: «%1$s» — это «%2$s». Они отмечены как «путаю с».</string>
+    <string name="forgery_done_title">Подделки разобраны</string>
+    <string name="forgery_done">Различено: %1$d из %2$d.</string>
+    <string name="forgery_mixed">Перепутано</string>
+    <string name="forgery_mixed_text">Они снова встретятся в следующих «Подделках».</string>
+
+    <!-- Text -->
+    <string name="text_title">Проверить текст</string>
+    <string name="text_intro">Вставь статью, главу, песню или свой конспект. Увидишь, какие находки в нём встречаются и каких слов из него в музее ещё нет.</string>
+    <string name="text_placeholder">Вставь или напиши текст</string>
+    <string name="text_sift">Просеять</string>
+    <string name="text_known_title">Знакомо</string>
+    <string name="text_known">слов этого текста уже есть в твоём музее.</string>
+    <string name="text_confirmed">Подтверждено: предложения сохранены вместе с находками.</string>
+    <string name="text_confirm_hint">К каждой находке прикрепится настоящее предложение, и она получит печать «встречено в тексте».</string>
+    <string name="text_fresh">Нет в музее</string>
+    <string name="text_fresh_hint">Остальные слова текста, сначала самые частые. Выбери, какие забрать в раскоп; подписи добавишь потом.</string>
+
+    <!-- Journal -->
+    <string name="journal_eyebrow">Полевой дневник</string>
+    <string name="journal_title">Журнал</string>
+    <string name="journal_days">дней в поле</string>
+    <string name="journal_finds">находок</string>
+    <string name="journal_cleanings">расчисток</string>
+    <string name="journal_vessels">сосудов склеено</string>
+    <string name="journal_field">Дни в поле</string>
+    <string name="journal_forecast">Пыль на неделю</string>
+    <string name="journal_forecast_text">Сколько находок покроется пылью в каждый день. В сегодняшний входят и уже ждущие.</string>
+    <string name="journal_eye">Глаз реставратора</string>
+    <string name="journal_eye_text">Как часто каждая ставка оказывалась верной. Хороший глаз: три удара почти всегда верны, а один удар часто нет.</string>
+    <string name="journal_eye_sharp">Острый глаз: когда ты {уверен|уверена}, ты прав{|а}.</string>
+    <string name="journal_eye_fair">Неплохой глаз. Уверенность иногда подводит; такие находки ждут в мастерской.</string>
+    <string name="journal_eye_over">Ты часто {уверен|уверена} и ошибаешься. Ставь меньше ударов: трещины учат сильнее всего.</string>
+    <string name="journal_halls">Залы</string>
+    <string name="journal_door_last">Последний стук в дверь: %1$d из %2$d, %3$s.</string>
+    <string name="journal_right">Вспомнено %1$d%% всех расчисток.</string>
+
+    <!-- Settings -->
+    <string name="set_bell">Вечерний колокол</string>
+    <string name="set_bell_hint">Раз в день, и только если ждёт шурф или есть пыль.</string>
+    <string name="set_bell_on">Звонить</string>
+    <string name="set_at">Во сколько</string>
+    <string name="set_pit_size">Находок в шурфе</string>
+    <string name="set_pace">Темп</string>
+    <string name="set_new">Новых в день</string>
+    <string name="set_new_hint">Сколько находок в день выходит из земли на первую расчистку.</string>
+    <string name="set_retention">Удержание</string>
+    <string name="set_retention_hint">Находка просит расчистки, когда вероятность вспомнить её падает ниже этого порога. Строже значит чаще.</string>
+    <string name="retention_light">85%</string>
+    <string name="retention_usual">90%</string>
+    <string name="retention_strict">95%</string>
+    <string name="set_language">Язык</string>
+    <string name="lang_system">Как в системе</string>
+    <string name="lang_none">Не язык</string>
+    <string name="set_gender">Как к тебе обращаться?</string>
+    <string name="gender_male">Он</string>
+    <string name="gender_female">Она</string>
+    <string name="set_backup">Резервная копия</string>
+    <string name="set_backup_hint">Весь музей вместе с картинками в одном файле, который хранишь ты.</string>
+    <string name="backup_export">Сохранить копию</string>
+    <string name="backup_export_hint">В файл, куда выберешь</string>
+    <string name="backup_import">Восстановить из копии</string>
+    <string name="backup_import_hint">Заменит всё, что здесь есть</string>
+    <string name="backup_import_confirm">Всё, что сейчас в музее, заменится содержимым копии.</string>
+    <string name="backup_import_do">Заменить</string>
+    <string name="backup_done">Копия сохранена.</string>
+    <string name="backup_failed">Не получилось сохранить копию.</string>
+    <string name="backup_restored">Восстановлено.</string>
+    <string name="backup_bad">Это не копия Стелы.</string>
+
+    <!-- Bell -->
+    <string name="channel_bell">Вечерний колокол</string>
+    <string name="channel_bell_desc">Шурф дня и находки, покрывшиеся пылью</string>
+    <string name="bell_title_pit">Шурф дня готов</string>
+    <string name="bell_title_dust">Легла пыль</string>
+    <string name="bell_pit">Несколько находок, которых ты давно не видел{|а}, и, может быть, редкая.</string>
+
+    <!-- Welcome -->
+    <string name="welcome_1_title">Всё, что стоит помнить, — находка</string>
+    <string name="welcome_1_text">Слово, термин, фраза, дата, имя. Записал{|а} — и находка поднята из земли. Ничего готового внутри нет: музей заполняешь ты.</string>
+    <string name="welcome_2_title">Расчищай, пока не засияет</string>
+    <string name="welcome_2_text">Пыль ложится по твоей кривой забывания. На расчистке сначала вспомни сам{|а} и поставь удары резца на то, что прав{|а}. Черепок, чистая глина, роспись, витрина.</string>
+    <string name="welcome_3_title">Склеивай сосуды, открывай залы</string>
+    <string name="welcome_3_text">Находки на одну тему — черепки одного сосуда. Расчисти их все, и он склеится золотом. Раз в месяц запечатанная дверь открывает новый зал.</string>
+    <string name="welcome_start">Начать первый раскоп</string>
+    <string name="welcome_word">casa</string>
+    <string name="welcome_word_back">дом</string>
+
+    <plurals name="finds">
+        <item quantity="one">%d находка</item>
+        <item quantity="few">%d находки</item>
+        <item quantity="many">%d находок</item>
+        <item quantity="other">%d находки</item>
+    </plurals>
+    <plurals name="vessels">
+        <item quantity="one">%d сосуд</item>
+        <item quantity="few">%d сосуда</item>
+        <item quantity="many">%d сосудов</item>
+        <item quantity="other">%d сосуда</item>
+    </plurals>
+    <plurals name="museum_holds">
+        <item quantity="one">%d экспонат</item>
+        <item quantity="few">%d экспоната</item>
+        <item quantity="many">%d экспонатов</item>
+        <item quantity="other">%d экспоната</item>
+    </plurals>
+    <plurals name="vessels_whole">
+        <item quantity="one">%d сосуд склеен</item>
+        <item quantity="few">%d сосуда склеено</item>
+        <item quantity="many">%d сосудов склеено</item>
+        <item quantity="other">%d сосуда склеено</item>
+    </plurals>
+    <plurals name="halls_open">
+        <item quantity="one">%d зал</item>
+        <item quantity="few">%d зала</item>
+        <item quantity="many">%d залов</item>
+        <item quantity="other">%d зала</item>
+    </plurals>
+    <plurals name="pit_text">
+        <item quantity="one">%d находка ждёт в шурфе</item>
+        <item quantity="few">%d находки ждут в шурфе</item>
+        <item quantity="many">%d находок ждут в шурфе</item>
+        <item quantity="other">%d находки ждут в шурфе</item>
+    </plurals>
+    <plurals name="door_in">
+        <item quantity="one">Запечатанная дверь откроется через %d день.</item>
+        <item quantity="few">Запечатанная дверь откроется через %d дня.</item>
+        <item quantity="many">Запечатанная дверь откроется через %d дней.</item>
+        <item quantity="other">Запечатанная дверь откроется через %d дня.</item>
+    </plurals>
+    <plurals name="door_left">
+        <item quantity="one">Остался %d вопрос</item>
+        <item quantity="few">Осталось %d вопроса</item>
+        <item quantity="many">Осталось %d вопросов</item>
+        <item quantity="other">Осталось %d вопроса</item>
+    </plurals>
+    <plurals name="unlabelled_count">
+        <item quantity="one">%d находка ещё без подписи</item>
+        <item quantity="few">%d находки ещё без подписи</item>
+        <item quantity="many">%d находок ещё без подписи</item>
+        <item quantity="other">%d находки ещё без подписи</item>
+    </plurals>
+    <plurals name="exhibits_more">
+        <item quantity="one">и ещё %d</item>
+        <item quantity="few">и ещё %d</item>
+        <item quantity="many">и ещё %d</item>
+        <item quantity="other">и ещё %d</item>
+    </plurals>
+    <plurals name="cleaned_today">
+        <item quantity="one">Сегодня %d расчистка</item>
+        <item quantity="few">Сегодня %d расчистки</item>
+        <item quantity="many">Сегодня %d расчисток</item>
+        <item quantity="other">Сегодня %d расчистки</item>
+    </plurals>
+    <plurals name="clean_dig">
+        <item quantity="one">Расчистить %d находку</item>
+        <item quantity="few">Расчистить %d находки</item>
+        <item quantity="many">Расчистить %d находок</item>
+        <item quantity="other">Расчистить %d находки</item>
+    </plurals>
+    <plurals name="csv_imported">
+        <item quantity="one">Добавлена %d находка</item>
+        <item quantity="few">Добавлено %d находки</item>
+        <item quantity="many">Добавлено %d находок</item>
+        <item quantity="other">Добавлено %d находки</item>
+    </plurals>
+    <plurals name="vessel_needs">
+        <item quantity="one">Положи ещё %d находку, и сосуд можно будет склеить.</item>
+        <item quantity="few">Положи ещё %d находки, и сосуд можно будет склеить.</item>
+        <item quantity="many">Положи ещё %d находок, и сосуд можно будет склеить.</item>
+        <item quantity="other">Положи ещё %d находки, и сосуд можно будет склеить.</item>
+    </plurals>
+    <plurals name="vessel_put_n">
+        <item quantity="one">Положить %d находку</item>
+        <item quantity="few">Положить %d находки</item>
+        <item quantity="many">Положить %d находок</item>
+        <item quantity="other">Положить %d находки</item>
+    </plurals>
+    <plurals name="added_now">
+        <item quantity="one">Только что добавлена %d</item>
+        <item quantity="few">Только что добавлено %d</item>
+        <item quantity="many">Только что добавлено %d</item>
+        <item quantity="other">Только что добавлено %d</item>
+    </plurals>
+    <plurals name="bulk_preview">
+        <item quantity="one">%d находка</item>
+        <item quantity="few">%d находки</item>
+        <item quantity="many">%d находок</item>
+        <item quantity="other">%d находки</item>
+    </plurals>
+    <plurals name="bulk_save">
+        <item quantity="one">Добавить %d находку</item>
+        <item quantity="few">Добавить %d находки</item>
+        <item quantity="many">Добавить %d находок</item>
+        <item quantity="other">Добавить %d находки</item>
+    </plurals>
+    <plurals name="summary_cleaned">
+        <item quantity="one">Расчищена %d находка</item>
+        <item quantity="few">Расчищено %d находки</item>
+        <item quantity="many">Расчищено %d находок</item>
+        <item quantity="other">Расчищено %d находки</item>
+    </plurals>
+    <plurals name="summary_dug">
+        <item quantity="one">Из земли поднята %d находка</item>
+        <item quantity="few">Из земли поднято %d находки</item>
+        <item quantity="many">Из земли поднято %d находок</item>
+        <item quantity="other">Из земли поднято %d находки</item>
+    </plurals>
+    <plurals name="text_found">
+        <item quantity="one">%d находка в тексте</item>
+        <item quantity="few">%d находки в тексте</item>
+        <item quantity="many">%d находок в тексте</item>
+        <item quantity="other">%d находки в тексте</item>
+    </plurals>
+    <plurals name="text_confirm">
+        <item quantity="one">Подтвердить %d находку</item>
+        <item quantity="few">Подтвердить %d находки</item>
+        <item quantity="many">Подтвердить %d находок</item>
+        <item quantity="other">Подтвердить %d находки</item>
+    </plurals>
+    <plurals name="text_take">
+        <item quantity="one">Забрать %d слово в раскоп</item>
+        <item quantity="few">Забрать %d слова в раскоп</item>
+        <item quantity="many">Забрать %d слов в раскоп</item>
+        <item quantity="other">Забрать %d слова в раскоп</item>
+    </plurals>
+    <plurals name="text_taken">
+        <item quantity="one">Забрано %d слово. Подпиши его в раскопе.</item>
+        <item quantity="few">Забрано %d слова. Подпиши их в раскопе.</item>
+        <item quantity="many">Забрано %d слов. Подпиши их в раскопе.</item>
+        <item quantity="other">Забрано %d слова. Подпиши их в раскопе.</item>
+    </plurals>
+    <plurals name="bell_dust">
+        <item quantity="one">%d находка под пылью. Пара минут с кисточкой.</item>
+        <item quantity="few">%d находки под пылью. Пара минут с кисточкой.</item>
+        <item quantity="many">%d находок под пылью. Пара минут с кисточкой.</item>
+        <item quantity="other">%d находки под пылью. Пара минут с кисточкой.</item>
+    </plurals>
+    <plurals name="bell_pit_dust">
+        <item quantity="one">Несколько забытых находок, может быть, редкая, и ещё %d под пылью.</item>
+        <item quantity="few">Несколько забытых находок, может быть, редкая, и ещё %d под пылью.</item>
+        <item quantity="many">Несколько забытых находок, может быть, редкая, и ещё %d под пылью.</item>
+        <item quantity="other">Несколько забытых находок, может быть, редкая, и ещё %d под пылью.</item>
+    </plurals>
+    <plurals name="span_minutes">
+        <item quantity="one">%d минуту</item>
+        <item quantity="few">%d минуты</item>
+        <item quantity="many">%d минут</item>
+        <item quantity="other">%d минуты</item>
+    </plurals>
+    <plurals name="span_hours">
+        <item quantity="one">%d час</item>
+        <item quantity="few">%d часа</item>
+        <item quantity="many">%d часов</item>
+        <item quantity="other">%d часа</item>
+    </plurals>
+    <plurals name="span_days">
+        <item quantity="one">%d день</item>
+        <item quantity="few">%d дня</item>
+        <item quantity="many">%d дней</item>
+        <item quantity="other">%d дня</item>
+    </plurals>
+    <plurals name="span_months">
+        <item quantity="one">%d месяц</item>
+        <item quantity="few">%d месяца</item>
+        <item quantity="many">%d месяцев</item>
+        <item quantity="other">%d месяца</item>
+    </plurals>
+    <plurals name="span_years">
+        <item quantity="one">%d год</item>
+        <item quantity="few">%d года</item>
+        <item quantity="many">%d лет</item>
+        <item quantity="other">%d года</item>
+    </plurals>
+</resources>
