@@ -43,6 +43,8 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.data.Images
 import app.stele.data.Kind
@@ -87,6 +89,7 @@ fun FindScreen(id: Long, field: Field, go: Go) {
             IconButton(onClick = { deleting = true }) { Icon(Icons.Rounded.Delete, stringResource(R.string.delete), tint = U.c.muted) }
         }
         LazyColumn(Modifier.weight(1f), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 24.dp)) {
+            item { Hint(Hints.FIND, field) }
             item {
                 Column(
                     Modifier.fillMaxWidth().clip(U.RLg).background(U.c.surface).border(1.dp, if (stage == Stage.EXHIBIT) U.c.gold else U.c.line, U.RLg).padding(18.dp),

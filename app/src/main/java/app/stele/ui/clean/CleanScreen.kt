@@ -53,6 +53,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.data.Find
 import app.stele.data.Keeper
@@ -204,6 +206,7 @@ private fun Card(
     Column(Modifier.fillMaxSize()) {
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp)) {
             last?.let { Banner(it) }
+            Hint(Hints.CLEAN, field)
             Spacer(Modifier.height(8.dp))
             Row(verticalAlignment = Alignment.CenterVertically) {
                 ShardArt(if (rare) Stage.EXHIBIT else f.stage, Modifier.size(30.dp), patina = field.patina(f), cracked = f.cracked, seed = f.id.toInt())

@@ -33,6 +33,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.data.Kind
 import app.stele.data.Mode
@@ -96,6 +98,7 @@ fun DoorScreen(field: Field, go: Go) {
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             when {
                 !started -> {
+                    Hint(Hints.DOOR, field)
                     SealedDoor(0f, Modifier.size(200.dp, 240.dp))
                     Spacer(Modifier.height(16.dp))
                     Text(stringResource(R.string.door_intro_title), style = UType.Title.copy(textAlign = TextAlign.Center))

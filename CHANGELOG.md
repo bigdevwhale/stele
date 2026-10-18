@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.0]
+
+- Every screen explains itself on a first visit: a placard with what happens there and what to do, put away with "Got it". Settings → Hints shows them all again.
+
 ## [1.0.0]
 
 - First release: a museum you fill yourself. Digs for each collection; finds as pairs, terms, phrases with [gaps] and questions, with your own sentence, an association, where you met it and a picture.

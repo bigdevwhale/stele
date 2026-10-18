@@ -48,6 +48,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.data.Find
 import app.stele.data.Kind
@@ -147,6 +149,7 @@ fun DigScreen(id: Long, field: Field, go: Go) {
             }
         }
         LazyColumn(Modifier.weight(1f), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 24.dp)) {
+            item { Hint(Hints.DIG, field) }
             item {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     DigSeal(dig.symbol, U.clay(dig.clay), 56.dp)

@@ -42,6 +42,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.domain.Rules
 import app.stele.domain.Stage
 import app.stele.ui.Field
@@ -87,6 +89,7 @@ fun DigsTab(field: Field, go: Go) {
             Text(stringResource(R.string.digs_eyebrow).uppercase(), style = UType.Eyebrow)
             Text(stringResource(R.string.digs_title), style = UType.Display)
             Text(stringResource(R.string.digs_text), style = UType.Sub)
+            Hint(Hints.DIGS, field)
         }
         if (field.digs.isEmpty()) {
             item {

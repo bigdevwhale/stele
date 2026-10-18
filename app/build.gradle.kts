@@ -25,6 +25,7 @@ android {
         versionCode = (System.getenv("VERSION_CODE") ?: "1").toInt()
         versionName = System.getenv("VERSION_NAME") ?: "1.0.0"
         buildConfigField("boolean", "DEMO", demo.toString())
+        buildConfigField("boolean", "SHOTS", project.hasProperty("shots").toString())
         // `-Pshots` gives the demo its own package, so screenshots never touch a demo someone is trying out.
         if (demo) applicationIdSuffix = if (project.hasProperty("shots")) ".shots" else ".demo"
     }
@@ -125,4 +126,6 @@ tasks.withType<Test>().configureEach {
     if (!project.hasProperty("render")) exclude("**/RenderScreens*")
     systemProperty("render.out", layout.buildDirectory.dir("art").get().asFile.absolutePath)
     systemProperty("render.lang", (findProperty("lang") as String?) ?: "en")
+    // `-Phints` keeps the first-visit placards in the renders.
+    systemProperty("render.hints", project.hasProperty("hints").toString())
 }

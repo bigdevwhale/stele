@@ -36,6 +36,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.domain.Hall
 import app.stele.domain.Memory
@@ -80,7 +82,9 @@ fun MuseumTab(field: Field, go: Go) {
                 IconButton(onClick = go::text) { Icon(Icons.AutoMirrored.Rounded.TextSnippet, stringResource(R.string.text_title), tint = U.c.muted) }
                 IconButton(onClick = go::settings) { Icon(Icons.Rounded.Settings, stringResource(R.string.settings), tint = U.c.muted) }
             }
-            Spacer(Modifier.height(12.dp))
+            Spacer(Modifier.height(4.dp))
+            Hint(Hints.MUSEUM, field)
+            Spacer(Modifier.height(8.dp))
         }
         item {
             val shelf = (field.vessels.sortedByDescending { field.mended(it) } ).map { field.look(it) }

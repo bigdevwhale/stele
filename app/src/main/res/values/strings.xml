@@ -372,6 +372,39 @@
     <string name="welcome_word">casa</string>
     <string name="welcome_word_back">house</string>
 
+    <!-- First-visit hints -->
+    <string name="hint_eyebrow">How it works</string>
+    <string name="hint_ok">Got it</string>
+    <string name="hint_museum_title">This is your museum</string>
+    <string name="hint_museum">Everything you dig up lives here. Each day, dust settles on what you’re about to forget: tap “Start cleaning” and recall those finds. Below are the day’s test pit, vessels you’ve glued and finds on show. Once a month the sealed door opens a new hall, and the temple front grows.</string>
+    <string name="hint_digs_title">Digs are your collections</string>
+    <string name="hint_digs">Make one dig per subject: a language, anatomy, work terms, capitals. For a language, choose it so the phone can say the words. You can also bring a whole Anki deck (.apkg) here, and it becomes a new dig.</string>
+    <string name="hint_dig_title">Inside a dig</string>
+    <string name="hint_dig">The bar shows how far your finds have come, from earth to gold. Add them one by one or as a list, group them into vessels by theme, and clean only this dig. Tap a find to see its path, links and history. ⋮ has CSV and Anki import.</string>
+    <string name="hint_vessel_title">A vessel is a theme</string>
+    <string name="hint_vessel">Put finds that belong together here: the kitchen, the bones of the hand. Each one is a shard. While a find is still in the ground its shard is missing; once all of them are cleaned, the vessel stands whole and its seams turn gold.</string>
+    <string name="hint_find_title">One find, up close</string>
+    <string name="hint_find">The steps show its way to the showcase, and “Recall now” is the chance you’d remember it today. Notes add your own sentence, an association or a picture. Link it to kin, opposites or what you confuse it with; mix-ups come back in Forgeries.</string>
+    <string name="hint_add_title">What can be a find</string>
+    <string name="hint_add">A pair (casa — house), a term with its meaning, a phrase with [brackets] round the words to recall, or a question. Only the front is needed; without a back it waits as “no label yet”. Your own sentence and an association make it stick better. “Save, next” keeps the screen open for the next one.</string>
+    <string name="hint_bulk_title">Many at once</string>
+    <string name="hint_bulk">One find per line, its two sides split by a dash, “=”, “;” or a tab. Paste a list from notes or a spreadsheet; the preview below shows how it was read.</string>
+    <string name="hint_clean_title">How a cleaning goes</string>
+    <string name="hint_clean">1. Recall the answer in your head, or write it down. 2. Stake strikes on how sure you are: if you were certain and wrong, the find cracks and goes to the workshop. 3. The brush clears the answer. 4. Grade yourself honestly: the buttons show when it will come back. A forgotten find returns at the end of the round.</string>
+    <string name="hint_door_title">Once a month</string>
+    <string name="hint_door">Twelve finds from every dig, mostly ones you haven’t seen for a while. No hints and no stakes: just remember or not. Three in four right opens a new hall. If it holds, try again in a week.</string>
+    <string name="hint_forgery_title">Tell the genuine one</string>
+    <string name="hint_forgery">The placard shows a meaning; pick the front that truly goes with it. The fakes are look-alikes and the finds you confuse. A wrong pick marks the two as “confused with”, so they meet again.</string>
+    <string name="hint_text_title">Sift a real text</string>
+    <string name="hint_text">Paste an article, a chapter or lyrics, or share text into Stele from any app. You’ll see what share of it you know, which finds appear in it (confirm them to keep the real sentence), and the words you don’t have yet: tap to take them into a dig.</string>
+    <string name="hint_journal_title">Your field notes</string>
+    <string name="hint_journal">Days in the field, how much dust the week will bring, and the restorer’s eye: how often each stake turned out right. A good eye is right on three strikes and modest on one. Nothing here can be lost; there are no streaks.</string>
+    <string name="hint_link_title">Linking finds</string>
+    <string name="hint_link">Choose how they’re tied, then pick the other find. “Confused with” is the useful one: those two will be set against each other in Forgeries.</string>
+    <string name="set_hints">Hints</string>
+    <string name="set_hints_hint">Each screen explains itself once, on the first visit.</string>
+    <string name="set_hints_again">Show hints again</string>
+
     <plurals name="finds">
         <item quantity="one">%d find</item>
         <item quantity="other">%d finds</item>

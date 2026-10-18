@@ -29,6 +29,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.data.Mode
 import app.stele.domain.Grade
 import app.stele.domain.Hall
@@ -60,6 +62,7 @@ fun JournalTab(field: Field, go: Go) {
         item {
             Text(stringResource(R.string.journal_eyebrow).uppercase(), style = UType.Eyebrow)
             Text(stringResource(R.string.journal_title), style = UType.Display)
+            Hint(Hints.JOURNAL, field)
             Spacer(Modifier.height(14.dp))
             UCard {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {

@@ -157,6 +157,7 @@ object DemoSeed {
             it.copy(
                 onboarded = true, lastDig = es, halls = 2, hallSeen = 2, doorAt = now - 31 * day, doorScore = 10, doorOf = 12,
                 soundingDay = -1,
+                hints = if (app.stele.BuildConfig.SHOTS) app.stele.ui.components.Hints.entries.map { h -> h.name }.toSet() else emptySet(),
             )
         }
     }

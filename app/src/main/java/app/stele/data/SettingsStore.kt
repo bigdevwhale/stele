@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import app.stele.domain.Gender
 import kotlinx.coroutines.flow.Flow
@@ -41,6 +42,8 @@ data class Settings(
     val halls: Int = 0,
     /** The last hall whose opening has been shown. */
     val hallSeen: Int = 0,
+    /** Screens whose first-visit placard has been put away. */
+    val hints: Set<String> = emptySet(),
 )
 
 class SettingsStore(context: Context) {
@@ -63,6 +66,7 @@ class SettingsStore(context: Context) {
         doorOf = this[DOOR_OF] ?: 0,
         halls = this[HALLS] ?: 0,
         hallSeen = this[HALL_SEEN] ?: 0,
+        hints = this[HINTS] ?: emptySet(),
     )
 
     suspend fun now(): Settings = settings.first()
@@ -84,6 +88,7 @@ class SettingsStore(context: Context) {
             it[DOOR_OF] = s.doorOf
             it[HALLS] = s.halls
             it[HALL_SEEN] = s.hallSeen
+            it[HINTS] = s.hints
         }
     }
 
@@ -102,5 +107,6 @@ class SettingsStore(context: Context) {
         val DOOR_OF = intPreferencesKey("door_of")
         val HALLS = intPreferencesKey("halls")
         val HALL_SEEN = intPreferencesKey("hall_seen")
+        val HINTS = stringSetPreferencesKey("hints")
     }
 }

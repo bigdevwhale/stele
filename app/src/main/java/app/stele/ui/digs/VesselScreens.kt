@@ -49,6 +49,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.data.Vessel
 import app.stele.domain.Rules
@@ -151,6 +153,7 @@ fun VesselScreen(id: Long, field: Field, go: Go) {
             IconButton(onClick = { go.editVessel(v.digId, id) }) { Icon(Icons.Rounded.Edit, stringResource(R.string.vessel_edit), tint = U.c.muted) }
         }
         LazyColumn(Modifier.weight(1f), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 24.dp)) {
+            item { Hint(Hints.VESSEL, field) }
             item {
                 Box(Modifier.fillMaxWidth().clip(U.RLg).background(U.c.surface).border(1.dp, if (mended) U.c.gold else U.c.line, U.RLg).padding(16.dp), contentAlignment = Alignment.Center) {
                     VesselArt(Shape.of(v.shape), field.shardsOf(v), mended, Modifier.size(240.dp), seed = v.id.toInt())

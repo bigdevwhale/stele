@@ -37,6 +37,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.data.Find
 import app.stele.domain.Memory
@@ -84,6 +86,7 @@ fun ForgeryScreen(digId: Long, field: Field, go: Go) {
                 return@Column
             }
             val r = rounds[index]
+            if (index == 0) Hint(Hints.FORGERY, field)
             Text(stringResource(R.string.forgery_ask), style = UType.Sub)
             Spacer(Modifier.height(10.dp))
             Column(

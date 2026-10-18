@@ -40,6 +40,8 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.data.Find
 import app.stele.data.Kind
@@ -93,6 +95,7 @@ fun TextScreen(field: Field, go: Go) {
         TopBar(stringResource(R.string.text_title), go::back)
         LazyColumn(Modifier.weight(1f), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 24.dp)) {
             item {
+                Hint(Hints.TEXT, field)
                 Text(stringResource(R.string.text_intro), style = UType.Sub)
                 Spacer(Modifier.height(10.dp))
                 UTextField(text, { text = it }, placeholder = stringResource(R.string.text_placeholder), minLines = 5)

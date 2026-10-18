@@ -14,6 +14,7 @@ import androidx.test.core.app.ApplicationProvider
 import app.stele.data.DemoSeed
 import app.stele.data.Settings
 import app.stele.ui.Handoff
+import app.stele.ui.components.Hints
 import app.stele.ui.SteleRoot
 import app.stele.ui.theme.SteleTheme
 import kotlinx.coroutines.runBlocking
@@ -99,7 +100,10 @@ class RenderScreens {
     fun screens() {
         if (ru) RuntimeEnvironment.setQualifiers("+ru")
         val app = ApplicationProvider.getApplicationContext<SteleApp>()
-        runBlocking { DemoSeed.seedIfEmpty(app, app.container) }
+        runBlocking {
+            DemoSeed.seedIfEmpty(app, app.container)
+            if (System.getProperty("render.hints") != "true") app.container.settings.update { it.copy(hints = Hints.entries.map { h -> h.name }.toSet()) }
+        }
         rule.setContent {
             val s: Settings? by app.container.settings.settings.collectAsState(initial = null)
             SteleTheme { s?.let { SteleRoot(it) } }

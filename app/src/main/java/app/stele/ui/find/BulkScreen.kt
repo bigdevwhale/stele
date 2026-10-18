@@ -38,6 +38,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.data.Find
 import app.stele.data.Kind
@@ -71,6 +73,7 @@ fun BulkScreen(digArg: Long, field: Field, go: Go) {
         TopBar(stringResource(R.string.bulk_title), go::back)
         LazyColumn(Modifier.weight(1f), contentPadding = PaddingValues(horizontal = 16.dp)) {
             item {
+                Hint(Hints.BULK, field)
                 Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                     field.digs.forEach { d -> Chip(d.name, d.id == digId, { digId = d.id }, U.clay(d.clay)) }
                 }
@@ -126,6 +129,7 @@ fun LinkScreen(id: Long, field: Field, go: Go) {
     Column(Modifier.fillMaxSize().background(U.c.bg).statusBarsPadding().imePadding()) {
         TopBar(stringResource(R.string.link_add), go::back)
         Column(Modifier.padding(horizontal = 16.dp)) {
+            Hint(Hints.LINK, field)
             Text(f.title(), style = UType.Name)
             Spacer(Modifier.height(10.dp))
             Segmented(LinkKind.entries, kind, { T.link(c, it) }, { kind = it })

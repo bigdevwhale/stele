@@ -53,6 +53,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import app.stele.R
+import app.stele.ui.components.Hint
+import app.stele.ui.components.Hints
 import app.stele.container
 import app.stele.data.Find
 import app.stele.data.Images
@@ -143,6 +145,7 @@ fun AddScreen(digArg: Long, vesselArg: Long, findId: Long, field: Field, go: Go)
     Column(Modifier.fillMaxSize().background(U.c.bg).statusBarsPadding().imePadding()) {
         TopBar(stringResource(if (old == null) R.string.new_find else R.string.find_edit), go::back)
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp)) {
+            Hint(Hints.ADD, field)
             // Which dig it goes to.
             Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
                 field.digs.forEach { d -> Chip(d.name, d.id == digId, { digId = d.id }, U.clay(d.clay)) }

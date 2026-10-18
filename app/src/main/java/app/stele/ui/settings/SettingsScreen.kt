@@ -121,6 +121,13 @@ fun SettingsScreen(field: Field, go: Go) {
                 }
             }
 
+            SectionTitle(stringResource(R.string.set_hints))
+            UCard {
+                Text(stringResource(R.string.set_hints_hint), style = UType.Muted)
+                Spacer(Modifier.height(8.dp))
+                app.stele.ui.components.SoftButton(stringResource(R.string.set_hints_again), { set { it.copy(hints = emptySet()) } })
+            }
+
             SectionTitle(stringResource(R.string.set_backup))
             UCard {
                 Text(stringResource(R.string.set_backup_hint), style = UType.Muted)
