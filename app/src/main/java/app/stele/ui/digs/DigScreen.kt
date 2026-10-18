@@ -89,6 +89,8 @@ fun DigScreen(id: Long, field: Field, go: Go) {
     val dig = field.dig(id) ?: return
     val finds = field.findsOf(id)
     val due = field.round(digId = id).size
+    // Comparing spellings across a big dig is not free: once per change, not on every keystroke in the search.
+    val forgeable = remember(finds, field.links) { Rules.forgeries(finds, field.links, 1, 0).isNotEmpty() }
     var query by rememberSaveable { mutableStateOf("") }
     var stage by rememberSaveable { mutableStateOf<Stage?>(null) }
     var unlabelledOnly by rememberSaveable { mutableStateOf(false) }
@@ -173,7 +175,7 @@ fun DigScreen(id: Long, field: Field, go: Go) {
                 Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     SoftButton(stringResource(R.string.new_find), { go.add(id) }, icon = Icons.Rounded.Add)
                     SoftButton(stringResource(R.string.bulk_title), { go.bulk(id) }, color = U.c.bronze, soft = U.c.bronzeSoft, icon = Icons.AutoMirrored.Rounded.PlaylistAdd)
-                    if (Rules.forgeries(finds, field.links, 1, 0).isNotEmpty()) {
+                    if (forgeable) {
                         SoftButton(stringResource(R.string.forgery_title), { go.forgery(id) }, color = U.c.ochre, soft = U.c.ochreSoft, icon = Icons.Rounded.TheaterComedy)
                     }
                 }

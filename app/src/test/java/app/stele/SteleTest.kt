@@ -184,6 +184,23 @@ class SteleTest {
     }
 
     @Test
+    fun aBigDeckSortsWithoutBreaking() {
+        // An imported Anki deck: thousands of finds, many alike, many never cleaned.
+        val now = 400 * day
+        val rnd = java.util.Random(3)
+        val finds = (1L..3000L).map { i ->
+            val s = if (i % 3 == 0L) 0.0 else rnd.nextDouble() * 200
+            find(i, "word${i % 500}", "meaning ${i % 700}", s = s, at = now - (rnd.nextDouble() * 60 * day).toLong()).copy(lapses = rnd.nextInt(4))
+        }
+        val t0 = System.currentTimeMillis()
+        repeat(20) { seed -> assertTrue(Rules.forgeries(finds, emptyList(), 8, seed.toLong()).isNotEmpty()) }
+        assertNotNull(Rules.sounding(finds, now, 0.9, 5, 400))
+        assertTrue(Rules.round(finds, now, 0.9, 10).isNotEmpty())
+        Rules.sift("word1 word2 something else entirely", finds)
+        assertTrue("took ${System.currentTimeMillis() - t0} ms", System.currentTimeMillis() - t0 < 20_000)
+    }
+
+    @Test
     fun siftingFindsKnownWordsAndOffersNewOnes() {
         val finds = listOf(find(1, "la madrugada", "small hours"), find(2, "ojalá", "hopefully"), find(3, "Memory is the [treasury]", kind = Kind.PHRASE))
         val s = Rules.sift("Llegamos de madrugada. Ojalá llueva mañana, mañana sin falta.", finds)

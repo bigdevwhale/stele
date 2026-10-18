@@ -146,13 +146,14 @@ object Rules {
         val confused = links.filter { it.kindOf == LinkKind.CONFUSED }
         // Those marked as confused go first, then the ones forgotten most.
         val targets = (confused.flatMap { listOf(it.a, it.b) }.mapNotNull { byId[it] }.distinctBy { it.id }.shuffled(rnd) +
-            pool.sortedByDescending { it.lapses * 10 + rnd.nextInt(10) }).distinctBy { it.id }
+            pool.map { it to it.lapses * 10 + rnd.nextInt(10) }.sortedByDescending { it.second }.map { it.first }).distinctBy { it.id }
         val out = mutableListOf<Forgery>()
         for (t in targets) {
             val sameDig = pool.filter { it.digId == t.digId && it.id != t.id && !Words.variants(it.back).any { v -> v in Words.variants(t.back) } }
             if (sameDig.size < 2) continue
             val marked = confused.filter { it.a == t.id || it.b == t.id }.mapNotNull { byId[it.other(t.id)] }.filter { it in sameDig }
-            val alike = sameDig.filter { it !in marked }.sortedBy { Words.unlikeness(it.front, t.front) + rnd.nextDouble() * 0.15 }
+            // The keys are drawn once: a sort whose keys change between comparisons breaks on big digs.
+            val alike = sameDig.filter { it !in marked }.map { it to Words.unlikeness(it.front, t.front) + rnd.nextDouble() * 0.15 }.sortedBy { it.second }.map { it.first }
             val decoys = (marked + alike).distinctBy { it.id }.take(3)
             out += Forgery(t, (decoys + t).shuffled(rnd))
             if (out.size == rounds) break

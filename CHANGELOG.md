@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.1]
+
+- Fixed a crash on start with a big dig (an imported Anki deck): the forgeries were shuffled inside a sort.
+
 ## [1.1.0]
 
 - Every screen explains itself on a first visit: a placard with what happens there and what to do, put away with "Got it". Settings → Hints shows them all again.
