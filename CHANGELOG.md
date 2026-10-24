@@ -1,5 +1,11 @@
 # Changelog
 
+<!--
+Telegram: end each version's section with a hidden block for the StillCraft chat. Start it with a
+line "<!-- tg", then 2-4 short lines in Russian for users (what is new, what is fixed), no markdown,
+then close it like any HTML comment. The release notes carry it, and the chat bot posts those lines.
+-->
+
 ## [1.2.0]
 
 - Anki import asks which field is the front, the back and the example, showing what each field holds and a preview. The first guess skips fields that are only a sound, so dictionary decks come in with their meanings.
