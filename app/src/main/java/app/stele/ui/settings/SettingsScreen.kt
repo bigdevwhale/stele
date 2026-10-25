@@ -41,6 +41,7 @@ import app.stele.ui.Field
 import app.stele.ui.Go
 import app.stele.ui.Language
 import app.stele.ui.components.Chip
+import app.stele.ui.components.CommunityLinks
 import app.stele.ui.components.ConfirmDialog
 import app.stele.ui.components.InfoRow
 import app.stele.ui.components.SectionTitle
@@ -135,6 +136,8 @@ fun SettingsScreen(field: Field, go: Go) {
                 InfoRow(Icons.Rounded.Download, stringResource(R.string.backup_import), stringResource(R.string.backup_import_hint), onClick = { import.launch(arrayOf("application/json", "text/plain", "application/octet-stream")) })
                 status?.let { Text(it, style = UType.Muted.copy(color = U.c.clay)) }
             }
+
+            CommunityLinks()
 
             Spacer(Modifier.height(24.dp))
             Text(stringResource(R.string.about, BuildConfig.VERSION_NAME), style = UType.Small.copy(textAlign = TextAlign.Center), modifier = Modifier.fillMaxWidth())
