@@ -6,7 +6,7 @@ line "<!-- tg", then 2-4 short lines in Russian for users (what is new, what is 
 then close it like any HTML comment. The release notes carry it, and the chat bot posts those lines.
 -->
 
-## [1.3.0]
+## [1.3.0] - 2026-11-08
 
 ### Added
 - Dark theme (#1): the museum after closing – umber dark, text in limestone, accents fired lighter to read on the dark. Settings → Theme: System, Light or Dark; the status and navigation bar icons follow.
