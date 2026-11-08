@@ -6,6 +6,15 @@ line "<!-- tg", then 2-4 short lines in Russian for users (what is new, what is 
 then close it like any HTML comment. The release notes carry it, and the chat bot posts those lines.
 -->
 
+## [1.3.1] - 2026-11-08
+
+### Added
+- Support Stele: Settings → StillCraft has a fifth line, «Поддержать Стелу · на новые раскопы и кисточки», which opens the StillCraft support page in the browser.
+
+<!-- tg
+В настройках, в блоке StillCraft, появилась строчка «Поддержать Стелу» – на новые раскопы и кисточки.
+-->
+
 ## [1.3.0] - 2026-11-08
 
 ### Added

@@ -629,4 +629,6 @@
     <string name="community_follow_hint">бот напишет, когда выйдет версия</string>
     <string name="community_chat">Чат StillCraft</string>
     <string name="community_chat_hint">все приложения и люди</string>
+    <string name="community_support">Поддержать Стелу</string>
+    <string name="community_support_hint">на новые раскопы и кисточки</string>
 </resources>
