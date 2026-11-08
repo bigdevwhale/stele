@@ -13,10 +13,12 @@ import androidx.compose.ui.test.performScrollTo
 import androidx.test.core.app.ApplicationProvider
 import app.stele.data.DemoSeed
 import app.stele.data.Settings
+import app.stele.data.ThemeMode
 import app.stele.ui.Handoff
 import app.stele.ui.components.Hints
 import app.stele.ui.SteleRoot
 import app.stele.ui.theme.SteleTheme
+import app.stele.ui.theme.dark
 import kotlinx.coroutines.runBlocking
 import org.junit.Rule
 import org.junit.Test
@@ -36,7 +38,9 @@ class RenderScreens {
     val rule = createAndroidComposeRule<androidx.activity.ComponentActivity>()
 
     private val lang = System.getProperty("render.lang") ?: "en"
-    private val out = File(System.getProperty("render.out") ?: "build/art", "screens-$lang").apply { mkdirs() }
+    /** `-Ptheme=dark` renders the night museum (#1). */
+    private val dark = System.getProperty("render.theme") == "dark"
+    private val out = File(System.getProperty("render.out") ?: "build/art", "screens-$lang" + if (dark) "-dark" else "").apply { mkdirs() }
     private val ru = lang == "ru"
 
     private fun settle(ms: Long = 3000) {
@@ -102,11 +106,12 @@ class RenderScreens {
         val app = ApplicationProvider.getApplicationContext<SteleApp>()
         runBlocking {
             DemoSeed.seedIfEmpty(app, app.container)
+            app.container.settings.update { it.copy(theme = if (dark) ThemeMode.DARK else ThemeMode.LIGHT) }
             if (System.getProperty("render.hints") != "true") app.container.settings.update { it.copy(hints = Hints.entries.map { h -> h.name }.toSet()) }
         }
         rule.setContent {
             val s: Settings? by app.container.settings.settings.collectAsState(initial = null)
-            SteleTheme { s?.let { SteleRoot(it) } }
+            SteleTheme(s?.theme?.dark() ?: dark) { s?.let { SteleRoot(it) } }
         }
         settle(4000)
         shot("1-museum")

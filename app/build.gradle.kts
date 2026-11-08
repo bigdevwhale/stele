@@ -126,6 +126,8 @@ tasks.withType<Test>().configureEach {
     if (!project.hasProperty("render")) exclude("**/RenderScreens*")
     systemProperty("render.out", layout.buildDirectory.dir("art").get().asFile.absolutePath)
     systemProperty("render.lang", (findProperty("lang") as String?) ?: "en")
+    // `-Ptheme=dark` renders the night museum.
+    systemProperty("render.theme", (findProperty("theme") as String?) ?: "light")
     // `-Phints` keeps the first-visit placards in the renders.
     systemProperty("render.hints", project.hasProperty("hints").toString())
 }

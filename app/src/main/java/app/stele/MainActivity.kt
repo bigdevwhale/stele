@@ -6,6 +6,8 @@ import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -15,6 +17,7 @@ import app.stele.notify.Bell
 import app.stele.ui.Request
 import app.stele.ui.SteleRoot
 import app.stele.ui.theme.SteleTheme
+import app.stele.ui.theme.dark
 
 class MainActivity : AppCompatActivity() {
     /** What the app was opened for (a bell, a shortcut, shared text), with a counter so each one opens again. */
@@ -23,12 +26,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) take(intent)
-        // Sand: dark icons in the bars.
-        val style = SystemBarStyle.light(android.graphics.Color.TRANSPARENT, android.graphics.Color.TRANSPARENT)
-        enableEdgeToEdge(statusBarStyle = style, navigationBarStyle = style)
         setContent {
             val settings: Settings? by container.settings.settings.collectAsStateWithLifecycle(initialValue = null)
-            SteleTheme {
+            val dark = settings?.theme?.dark() ?: isSystemInDarkTheme()
+            // Sand wants dark icons in the bars, the night museum light ones; the theme can differ from the phone's (#1).
+            LaunchedEffect(dark) {
+                val style = if (dark) SystemBarStyle.dark(android.graphics.Color.TRANSPARENT)
+                else SystemBarStyle.light(android.graphics.Color.TRANSPARENT, android.graphics.Color.TRANSPARENT)
+                enableEdgeToEdge(statusBarStyle = style, navigationBarStyle = style)
+            }
+            SteleTheme(dark) {
                 // Wait for settings so the welcome doesn't flash for someone with a museum.
                 settings?.let { SteleRoot(it, request) }
             }

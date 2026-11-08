@@ -114,7 +114,7 @@ fun OnboardingScreen(onDone: (Gender) -> Unit) {
 private fun Sweep() {
     val t by rememberInfiniteTransition(label = "sweep").animateFloat(0f, 1f, infiniteRepeatable(tween(2600, easing = LinearEasing), RepeatMode.Restart), label = "brush")
     Box(Modifier.size(260.dp, 130.dp).clip(U.RLg).border(1.dp, U.c.line, U.RLg)) {
-        Column(Modifier.matchParentSize().background(U.c.limestone).padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+        Column(Modifier.matchParentSize().background(U.c.paper).padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
             Text(stringResource(R.string.welcome_word), style = UType.Find)
             Text(stringResource(R.string.welcome_word_back), style = UType.Italic)
         }

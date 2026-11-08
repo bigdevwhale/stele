@@ -292,7 +292,7 @@ private fun Card(
                 // The answer, under the dust the brush sweeps away.
                 Box(Modifier.fillMaxWidth().clip(U.RLg)) {
                     Column(
-                        Modifier.fillMaxWidth().background(U.c.limestone).border(1.dp, U.c.line, U.RLg).padding(18.dp),
+                        Modifier.fillMaxWidth().background(U.c.paper).border(1.dp, U.c.line, U.RLg).padding(18.dp),
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
                         AnswerText(expected.ifBlank { f.back })

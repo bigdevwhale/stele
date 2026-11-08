@@ -90,7 +90,9 @@ fun ForgeryScreen(digId: Long, field: Field, go: Go) {
             Text(stringResource(R.string.forgery_ask), style = UType.Sub)
             Spacer(Modifier.height(10.dp))
             Column(
-                Modifier.fillMaxWidth().clip(U.RLg).background(U.c.night).padding(20.dp),
+                Modifier.fillMaxWidth().clip(U.RLg).background(U.c.night)
+                    // Night on the night museum's floor needs an edge to stand out (#1).
+                    .then(if (U.c.dark) Modifier.border(1.dp, U.c.line, U.RLg) else Modifier).padding(20.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Text(stringResource(R.string.forgery_placard).uppercase(), style = UType.Eyebrow.copy(color = U.c.gold))
@@ -109,7 +111,7 @@ fun ForgeryScreen(digId: Long, field: Field, go: Go) {
                 }
                 Row(
                     Modifier.fillMaxWidth().padding(vertical = 5.dp).clip(U.RMd)
-                        .background(if (p != null && isGenuine) U.c.goldSoft else U.c.limestone)
+                        .background(if (p != null && isGenuine) U.c.goldSoft else U.c.paper)
                         .border(if (p != null && (isGenuine || ch.id == p.id)) 2.dp else 1.dp, border, U.RMd)
                         .clickable(enabled = p == null) {
                             picked = ch

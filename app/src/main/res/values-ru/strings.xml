@@ -335,6 +335,10 @@
     <string name="retention_light">85%</string>
     <string name="retention_usual">90%</string>
     <string name="retention_strict">95%</string>
+    <string name="set_theme">Тема</string>
+    <string name="theme_system">Как в системе</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
     <string name="set_language">Язык</string>
     <string name="lang_system">Как в системе</string>
     <string name="lang_none">Не язык</string>

@@ -44,7 +44,17 @@ data class Settings(
     val hallSeen: Int = 0,
     /** Screens whose first-visit placard has been put away. */
     val hints: Set<String> = emptySet(),
+    /** Sand by day, the museum after closing by night, or as the phone has it (#1). */
+    val theme: ThemeMode = ThemeMode.SYSTEM,
 )
+
+enum class ThemeMode {
+    SYSTEM, LIGHT, DARK;
+
+    companion object {
+        fun of(name: String?) = entries.firstOrNull { it.name == name } ?: SYSTEM
+    }
+}
 
 class SettingsStore(context: Context) {
     private val store = context.applicationContext.dataStore
@@ -67,6 +77,7 @@ class SettingsStore(context: Context) {
         halls = this[HALLS] ?: 0,
         hallSeen = this[HALL_SEEN] ?: 0,
         hints = this[HINTS] ?: emptySet(),
+        theme = ThemeMode.of(this[THEME]),
     )
 
     suspend fun now(): Settings = settings.first()
@@ -89,6 +100,7 @@ class SettingsStore(context: Context) {
             it[HALLS] = s.halls
             it[HALL_SEEN] = s.hallSeen
             it[HINTS] = s.hints
+            it[THEME] = s.theme.name
         }
     }
 
@@ -108,5 +120,6 @@ class SettingsStore(context: Context) {
         val HALLS = intPreferencesKey("halls")
         val HALL_SEEN = intPreferencesKey("hall_seen")
         val HINTS = stringSetPreferencesKey("hints")
+        val THEME = stringPreferencesKey("theme")
     }
 }

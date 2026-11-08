@@ -142,7 +142,7 @@ fun Chip(text: String, selected: Boolean, onClick: () -> Unit, color: Color = U.
             containerColor = U.c.surface,
             labelColor = U.c.muted,
             selectedContainerColor = color.copy(alpha = 0.16f),
-            selectedLabelColor = color,
+            selectedLabelColor = U.legible(color),
         ),
         border = FilterChipDefaults.filterChipBorder(
             enabled = true,

@@ -1,13 +1,17 @@
 package app.stele.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.lerp
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -17,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import app.stele.R
+import app.stele.data.ThemeMode
 import app.stele.domain.Stage
 
 /** Lining figures: Cormorant's old-style 1 reads as an I. */
@@ -49,6 +54,12 @@ data class Palette(
     val limestone: Color,
     val night: Color,
     val danger: Color,
+    /**
+     * A placard's card: hints, the revealed answer, the forgery tiles. In the sun it's the limestone itself;
+     * at night the limestone stays pale for the drawn museum, so the cards need a colour of their own (#1).
+     */
+    val paper: Color,
+    val dark: Boolean = false,
 )
 
 val Sand = Palette(
@@ -73,6 +84,39 @@ val Sand = Palette(
     limestone = Color(0xFFF2EADB),
     night = Color(0xFF2A211A),
     danger = Color(0xFFA8322A),
+    paper = Color(0xFFF2EADB),
+)
+
+/**
+ * The museum after closing (#1): umber dark and warm stone instead of sand, the text in limestone. The
+ * accents are fired lighter so they hold on the dark (all ink and accents ≥ 4.5:1 on bg, surface and paper);
+ * their soft variants turn into dark tints rather than pastels. Limestone and stone stay pale – they're
+ * the museum's own stone in the drawings, now in moonlight.
+ */
+val Night = Palette(
+    bg = Color(0xFF17120E),
+    surface = Color(0xFF211A14),
+    surface2 = Color(0xFF2C231B),
+    line = Color(0xFF3D3228),
+    ink = Color(0xFFEDE3D1),
+    muted = Color(0xFFB9A790),
+    faint = Color(0xFF8A7763),
+    clay = Color(0xFFE2805A),
+    claySoft = Color(0xFF45281C),
+    ochre = Color(0xFFDDA54C),
+    ochreSoft = Color(0xFF3F3019),
+    bronze = Color(0xFF74B5A6),
+    bronzeSoft = Color(0xFF1D3631),
+    gold = Color(0xFFE3C062),
+    goldDeep = Color(0xFFDDB650),
+    goldSoft = Color(0xFF3F3418),
+    earth = Color(0xFFA8927A),
+    stone = Color(0xFF8C7F6C),
+    limestone = Color(0xFFCDBFA6),
+    night = Color(0xFF0D0A07),
+    danger = Color(0xFFE8705F),
+    paper = Color(0xFF28201A),
+    dark = true,
 )
 
 val LocalPalette = staticCompositionLocalOf { Sand }
@@ -126,6 +170,13 @@ object U {
     )
 
     fun clay(i: Int): Color = clays[Math.floorMod(i, clays.size)]
+
+    /**
+     * A colour as text: the darker dig clays vanish on the night palette, so they're lifted toward the ink
+     * there (#1). The palette's own accents are already fired light enough and keep their hue.
+     */
+    @Composable
+    fun legible(color: Color): Color = if (c.dark && color.luminance() < 0.25f) lerp(color, c.ink, 0.45f) else color
 }
 
 object UType {
@@ -146,12 +197,42 @@ object UType {
     val Button: TextStyle @Composable get() = TextStyle(fontFamily = Manrope, fontWeight = FontWeight.Bold, fontSize = 15.sp)
 }
 
+/** Whether the chosen theme comes out dark here; "as the system" follows the phone. */
 @Composable
-fun SteleTheme(content: @Composable () -> Unit) {
-    val p = Sand
+fun ThemeMode.dark(): Boolean = when (this) {
+    ThemeMode.SYSTEM -> isSystemInDarkTheme()
+    ThemeMode.LIGHT -> false
+    ThemeMode.DARK -> true
+}
+
+@Composable
+fun SteleTheme(dark: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+    val p = if (dark) Night else Sand
     CompositionLocalProvider(LocalPalette provides p) {
         MaterialTheme(
-            colorScheme = lightColorScheme(
+            colorScheme = if (dark) darkColorScheme(
+                primary = p.clay,
+                onPrimary = p.surface,
+                primaryContainer = p.claySoft,
+                onPrimaryContainer = p.ink,
+                secondary = p.bronze,
+                onSecondary = p.surface,
+                secondaryContainer = p.bronzeSoft,
+                onSecondaryContainer = p.ink,
+                background = p.bg,
+                surface = p.surface,
+                surfaceContainer = p.surface,
+                surfaceContainerHigh = p.surface,
+                surfaceContainerHighest = p.surface2,
+                surfaceContainerLow = p.surface2,
+                onBackground = p.ink,
+                onSurface = p.ink,
+                onSurfaceVariant = p.muted,
+                outline = p.line,
+                outlineVariant = p.line,
+                error = p.danger,
+                onError = p.surface,
+            ) else lightColorScheme(
                 primary = p.clay,
                 onPrimary = p.surface,
                 primaryContainer = p.claySoft,

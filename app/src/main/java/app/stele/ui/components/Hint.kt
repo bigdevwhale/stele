@@ -60,7 +60,7 @@ fun Hint(hint: Hints, field: Field, modifier: Modifier = Modifier) {
     var gone by remember { mutableStateOf(false) }
     AnimatedVisibility(hint.name !in field.settings.hints && !gone, exit = fadeOut() + shrinkVertically()) {
         Column(
-            modifier.fillMaxWidth().padding(vertical = 6.dp).clip(U.RMd).background(U.c.limestone).border(1.dp, U.c.line, U.RMd).padding(14.dp),
+            modifier.fillMaxWidth().padding(vertical = 6.dp).clip(U.RMd).background(U.c.paper).border(1.dp, U.c.line, U.RMd).padding(14.dp),
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 DigSeal(hint.glyph, U.c.clay, 30.dp)

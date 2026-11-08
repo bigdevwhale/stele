@@ -35,6 +35,7 @@ import app.stele.R
 import app.stele.container
 import app.stele.data.Backup
 import app.stele.data.Settings
+import app.stele.data.ThemeMode
 import app.stele.domain.Gender
 import app.stele.notify.Bell
 import app.stele.ui.Field
@@ -98,6 +99,15 @@ fun SettingsScreen(field: Field, go: Go) {
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                     listOf(0.85f to R.string.retention_light, 0.9f to R.string.retention_usual, 0.95f to R.string.retention_strict).forEach { (r, label) ->
                         Chip(stringResource(label), kotlin.math.abs(s.retention - r) < 0.001f, { set { it.copy(retention = r) } })
+                    }
+                }
+            }
+
+            SectionTitle(stringResource(R.string.set_theme))
+            UCard {
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    listOf(ThemeMode.SYSTEM to R.string.theme_system, ThemeMode.LIGHT to R.string.theme_light, ThemeMode.DARK to R.string.theme_dark).forEach { (m, label) ->
+                        Chip(stringResource(label), s.theme == m, { set { it.copy(theme = m) } })
                     }
                 }
             }
